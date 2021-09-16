@@ -4,7 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+import VideoCard from './VideoCard';
 import Popover from '../CustomPopover';
 import './styles.scss';
 
@@ -26,19 +26,6 @@ const themeOptions = [
   { key: 3, name: 'Other' },
 ];
 
-const VideoCard = ({ url }) => (
-  <div className="video-card">
-    <img src={url} alt="" />
-    <div className="bottom">
-      <div className="icon">
-        <VisibilityIcon />
-        <div className="txt-preview">Preview</div>
-      </div>
-      <button type="button" className="nd-btn">Copy Link</button>
-    </div>
-  </div>
-);
-
 const MarketingVideo = () => {
   const [videos, setVideos] = useState([]);
   const [videoSize, setVideoSize] = useState(0);
@@ -46,23 +33,19 @@ const MarketingVideo = () => {
   const [theme, setTheme] = useState(0);
 
   useEffect(() => {
-    console.log('userEffect');
     const samples = require('./videos.json');
     setVideos(samples);
   }, []);
 
   const handleChangeLanguage = (event) => {
-    console.log('handleChangeLanguage', event.target.value);
     setLanguage(Number(event.target.value));
   };
 
   const handleChangeSize = (event) => {
-    console.log('handleChangeSize', event.target.value);
     setVideoSize(Number(event.target.value));
   };
 
   const handleChangeTheme = (event) => {
-    console.log('handleChangeTheme', event.target.value);
     setTheme(Number(event.target.value));
   };
 
@@ -157,7 +140,8 @@ const MarketingVideo = () => {
         </div>
         <div className="videos">
           {filteredVidoes.map((video) => (
-            <VideoCard key={video.id} url={video.url} />
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            <VideoCard key={video.id} {...video} />
           ))}
         </div>
       </div>

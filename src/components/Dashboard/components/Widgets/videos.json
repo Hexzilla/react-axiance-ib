@@ -1,42 +1,48 @@
 [
   {
     "id": "1",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video1.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video1.png",
+    "url": "https://www.youtube.com/watch?v=x9J0NdV0u9k",
     "language": "English",
     "size": "1920x1080",
     "theme": "Promotional"
   },
   {
     "id": "2",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video2.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video2.png",
+    "url": "https://www.youtube.com/watch?v=w7ejDZ8SWv8",
     "language": "English",
     "size": "1080x1080",
     "theme": "Other"
   },
   {
     "id": "3",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video3.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video3.png",
+    "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
     "language": "English",
     "size": "1920x1080",
     "theme": "Promotional"
   },
   {
     "id": "4",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video4.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video4.png",
+    "url": "https://www.youtube.com/watch?v=SSo_EIwHSd4",
     "language": "English",
     "size": "1080x1080",
     "theme": "Other"
   },
   {
     "id": "5",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video5.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video5.png",
+    "url": "https://www.youtube.com/watch?v=x9J0NdV0u9k",
     "language": "English",
     "size": "1080x1080",
     "theme": "Educational"
   },
   {
     "id": "6",
-    "url": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video6.png",
+    "thumbnail": "https://axiance-assets.netlify.app/portal/videos/thumbnails/video6.png",
+    "url": "https://www.youtube.com/watch?v=x9J0NdV0u9k",
     "language": "Spanish",
     "size": "1080x1920",
     "theme": "Educational"
