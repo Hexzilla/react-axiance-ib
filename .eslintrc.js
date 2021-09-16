@@ -24,5 +24,6 @@ module.exports = {
     'react/prop-types': 'off',
     'no-nested-ternary': 'off',
     'react/jsx-no-bind': 'off',
+    'linebreak-style': 'off',
   },
 };
