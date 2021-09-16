@@ -1,97 +1,163 @@
-import React from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useEffect, useState } from 'react';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+import VideoCard from './VideoCard';
+import VideoPlayer from './VideoPlayer';
 import Popover from '../CustomPopover';
 import './styles.scss';
-import FilteringDropdown from './new';
+import videos from './videos';
 
-const VideoCard = () => (
-  <div className="video-card">
-    <img src="https://axiance-assets.netlify.app/portal/banners/demo/en/120x240.png" alt="" />
-    <div className="bottom">
-      <div className="icon">
-        <VisibilityIcon />
-        <div className="txt-preview">Preview</div>
-      </div>
-      <button type="button" className="nd-btn">Copy Link</button>
-    </div>
-  </div>
-);
+const languageOptions = [
+  { key: 0, name: 'All' },
+  { key: 1, name: 'English' },
+  { key: 2, name: 'Spanish' },
+];
+const sizeOptions = [
+  { key: 0, name: 'All' },
+  { key: 1, name: '1920x1080' },
+  { key: 2, name: '1080x1080' },
+  { key: 3, name: '1080x1920' },
+];
+const themeOptions = [
+  { key: 0, name: 'All' },
+  { key: 1, name: 'Promotional' },
+  { key: 2, name: 'Educational' },
+  { key: 3, name: 'Other' },
+];
 
-const MarketingVideo = () => (
+const MarketingVideo = () => {
+  const [videoSize, setVideoSize] = useState(0);
+  const [language, setLanguage] = useState('en');
+  const [theme, setTheme] = useState(0);
+  const [playState, setPlayState] = useState(false);
+  const [videoUrl, setVideoUrl] = useState();
+  const [filterVideos, setFilterVideos] = useState([]);
 
-  <div className="marketing-video">
-    <div className="referralSelectors">
-      <div className="selector">
-        <label htmlFor="Language" className="optionsLabel">
-          Language
-        </label>
-        <select className="optionsSelector" id="language">
-          <option value={10}>English</option>
-        </select>
-      </div>
+  const handleChangeLanguage = (event) => {
+    setLanguage(Number(event.target.value));
+  };
 
+  const handleChangeSize = (event) => {
+    setVideoSize(Number(event.target.value));
+  };
+
+  const handleChangeTheme = (event) => {
+    setTheme(Number(event.target.value));
+  };
+
+  const onPlayVideo = (url) => {
+    setVideoUrl(url);
+    setPlayState(true);
+  };
+
+  const onStopPlay = () => {
+    setPlayState(false);
+  };
+
+  useEffect(() => {
+    setFilterVideos;
+  }, [videoSize, language, theme]);
+
+  const filterVidoes = (Videolanguage, size, VideoTheme) => {
+    let filtered = videos;
+    if (Videolanguage !== 0) {
+      const option = languageOptions.find((it) => it.key === Videolanguage);
+      if (option) {
+        filtered = filtered.filter((it) => it.Videolanguage === option.name);
+      }
+    }
+    if (size !== 0) {
+      const option = sizeOptions.find((it) => it.key === size);
+      if (option) {
+        filtered = filtered.filter((it) => it.size === option.name);
+      }
+    }
+    if (VideoTheme !== 0) {
+      const option = themeOptions.find((it) => it.key === VideoTheme);
+      if (option) {
+        filtered = filtered.filter((it) => it.VideoTheme === option.name);
+      }
+    }
+    return filtered;
+  };
+  const filteredVidoes = filterVidoes(language, videoSize, theme);
+
+  return (
+    <div className="marketing-video">
       <div className="referralSelectors">
         <div className="selector">
-          <label htmlFor="size" className="optionsLabel">
-            Size
+          <label htmlFor="Language" className="optionsLabel">
+            Language
           </label>
-          <select className="optionsSelector" id="size">
-            <option value={10}>All</option>
-            <option value={1}>10x10</option>
-            <option value={3}>20x20</option>
+          <select className="optionsSelector" id="language" value={language} onChange={handleChangeLanguage}>
+            {languageOptions.map((option) => (
+              <option key={option.key} value={option.key}>{option.name}</option>
+            ))}
           </select>
         </div>
-      </div>
 
-      <div className="referralSelectors">
-        <div className="selector">
-          <label htmlFor="Theme" className="optionsLabel">
-            Theme
-          </label>
-          <select className="optionsSelector" id="theme">
+        <div className="referralSelectors">
+          <div className="selector">
+            <label htmlFor="size" className="optionsLabel">
+              Size
+            </label>
+            <select className="optionsSelector" id="size" value={videoSize} onChange={handleChangeSize}>
+              {sizeOptions.map((option) => (
+                <option key={option.key} value={option.key}>{option.name}</option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-            <option value={10}>All</option>
-
-          </select>
+        <div className="referralSelectors">
+          <div className="selector">
+            <label htmlFor="Theme" className="optionsLabel">
+              Theme
+            </label>
+            <select className="optionsSelector" id="theme" value={theme} onChange={handleChangeTheme}>
+              {themeOptions.map((option) => (
+                <option key={option.key} value={option.key}>{option.name}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="filter-section">
+          <div className="filter">
+            <button className="nd-btn" type="button">Apply</button>
+          </div>
         </div>
       </div>
-      <div className="filter-section">
-        <div className="filter">
-          <button className="nd-btn" type="button">Apply</button>
+      <div className="content">
+        <div className="campaign-name">
+          <div className="label">CAMPAIGN NAME</div>
+          <div className="campaign-name-input">
+            <input className="" />
+            <span>
+              Additional Parameters (optional)
+              <Popover
+                className="warning-popover"
+                showArrow
+                triggerNode={<ErrorOutlineIcon />}
+                trigger="click"
+              >
+                <div className="champaign-name-popover">
+                  Add tracking parameters to know which users came through this creative
+                </div>
+              </Popover>
+            </span>
+          </div>
+        </div>
+        <VideoPlayer open={playState} url={videoUrl} onClose={onStopPlay} />
+        <div className="videos">
+          {filteredVidoes.map((video) => (
+            <button type="button" className="" onClick={() => onPlayVideo()}>
+              <VideoCard key={video.id} {...video} onPlayVideo={onPlayVideo} />
+            </button>
+          ))}
         </div>
       </div>
-      <FilteringDropdown />
     </div>
-    <div className="content">
-      <div className="campaign-name">
-        <div className="label">CAMPAIGN NAME</div>
-        <div className="campaign-name-input">
-          <input className="" />
-          <span>
-            Additional Parameters (optional)
-            <Popover
-              className="warning-popover"
-              showArrow
-              triggerNode={<ErrorOutlineIcon />}
-              trigger="click"
-            >
-              <div className="champaign-name-popover">
-                Add tracking parameters to know which users came through this creative
-              </div>
-            </Popover>
-          </span>
-        </div>
-      </div>
-      <div className="videos">
-
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default MarketingVideo;
