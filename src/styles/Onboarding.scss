@@ -1,0 +1,126 @@
+@import 'App.scss';
+
+.doc-type-address,
+.onboarding-identity,
+.onboarding-address {
+  width: 100%;
+
+  .onboarding-address-inner,
+  .onboarding-identity-inner {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .onboard {
+      @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .submit-doc {
+        cursor: pointer;
+      }
+
+      .title {
+        font-size: 14px;
+        font-weight: 200;
+      }
+
+      .doc-type {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        label {
+          padding: 5px 5px 5px 0px;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+
+          .MuiRadio-colorSecondary {
+            color: #5BBC54;
+          }
+        }
+      }
+
+      .file-upload {
+        width: 100%;
+        display: flex;
+
+        @media (max-width: $breakpoint-mobile) {
+          flex-direction: column;
+        }
+
+        input[type="file"] {
+          display: none;
+        }
+
+        .custom-file-upload {
+          border: 1px solid #D5E05B;
+          border-radius: 5px;
+          padding: 1rem 3rem;
+          margin: 1rem 0 0.25rem 0;
+          cursor: pointer;
+          width: 100%;
+          font-size: 12px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media (max-width: $breakpoint-mobile) {
+            padding: 1rem 0;
+          }
+
+          .upload-icon {
+            padding-right: 0.5rem;
+            font-size: 20px;
+          }
+        }
+
+        .custom-file-upload.disabled {
+          cursor: initial;
+        }
+
+        .dropzone {
+          height: 100px;
+          border: 1px solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .title {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        .step-counter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 5px;
+          margin-right: 10px;
+          background-color: #ececec;
+        }
+      }
+
+      .green-cta {
+        padding: 10px 10px;
+        width: 140px;
+      }
+
+      .file-note {
+        font-size: 12px;
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
+}

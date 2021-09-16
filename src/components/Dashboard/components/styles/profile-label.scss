@@ -1,0 +1,28 @@
+.nd-profile-label {
+  position: relative;
+  display: flex;
+  padding: 0 23px;
+  img {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    border: 1px solid #D5E05B;
+  }
+  span.nd-badge {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: transparent linear-gradient(180deg, #D5E05B 0%, #50B848 100%) 0 0 no-repeat padding-box;
+    top: 0;
+    left: 20px;
+  }
+  .nd-name-section {
+    padding-left: 12px;
+    padding-top:8px;
+    font-size: medium;
+    .nd-description {
+      font-size: 12px;
+    }
+  }
+}

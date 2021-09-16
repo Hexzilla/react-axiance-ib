@@ -1,0 +1,52 @@
+.account-selector {
+  color: white;
+  width: 414px;
+  padding: 27px 21px;
+  .back {
+    display: flex;
+    align-items: center;
+    span {
+      padding-left: 5px;
+    }
+  }
+
+  .option {
+    padding: 10px;
+    border: 1px solid white;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    .radio-icon {
+      width: 20px;
+      height: 20px;
+      margin: 0 40px 0 10px;
+      border-radius: 50%;
+      border: 1px solid white;
+      .selected {
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        margin: 2px;
+        background-color: white;
+      }
+    }
+    .content {
+      .name {
+        display: flex;
+        .text {
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+      .balance {
+        font-size: 15px;
+      }
+    }
+    .tag-section {
+      margin-left: 20px;
+      text-transform: uppercase;
+    }
+  }
+}

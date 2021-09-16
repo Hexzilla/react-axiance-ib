@@ -1,0 +1,279 @@
+{
+  "submit": "Submit",
+  "join": "Join Now",
+  "risk": "Trading involves significant risk of loss",
+  "hello.label": "Hey",
+  "dashboard": {
+    "subtitle": "In order to use our platform, please complete the onboarding process.",
+    "social-title": "Keep in touch with us:",
+    "identity": "Verify identity",
+    "address": "Verify address",
+    "contract": "Sign a contract",
+    "validGovernment": "Use a valid government-issued photo ID.",
+    "residencePermit": "A residence permit is also a valid identity card.",
+    "contactMethod": "Preferred contact method",
+    "pleaseSelect": "Please Select",
+    "phone": "Phone",
+    "contactTime": "Preferred contact time"
+  },
+  "address": {
+    "documentType": "Choose document type",
+    "bankStatement": "Bank statement",
+    "utilityBill": "Utility Bill",
+    "rentalAgreement": "Rental Agreement",
+    "taxBill": "Tax Bill",
+    "insurance": "Health/Insurance statement/Certificate",
+    "idFront": "Upload Document",
+    "fileNote": "*Images and PDF files only."
+  },
+  "identity": {
+    "ID": "ID",
+    "passport": "Passport",
+    "drivingLicense": "Driving License",
+    "frontSide": "Upload Front Side",
+    "backSide": "Upload Back Side",
+    "fileNote": "*JPEG, PNG and PDF files only."
+  },
+  "login": {
+    "signin": "Sign In",
+    "haveAccount": "Do not have an account yet?",
+    "signup": "Sign up now",
+    "email": "E-Mail",
+    "password": "Password",
+    "forgotPassword": "Forgot password?"
+  },
+  "changePassword": {
+    "changePassword": "Change Password",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password"
+  },
+  "createPassword": {
+    "createPassword": "Create your password",
+    "enterEmail": "Enter your email address to",
+    "createPass": "create your password.",
+    "createPasswordButton": "Create Password"
+  },
+  "newPassword": {
+    "confirmPassword": "Confirm Password"
+  },
+  "register": {
+    "signUp": "Sign Up",
+    "gotAccount": "You already have an account?",
+    "fistName": "First Name",
+    "lastName": "Last Name",
+    "createAccount": "Create Account",
+    "country": "Country of Residence"
+  },
+  "resetPassword": {
+    "forgotPassword": "Forgot your password?",
+    "enterEmail": "Enter your email address to",
+    "recoverPassword": "recover your password.",
+    "reset": "Reset Password"
+  },
+  "verifyEmail": {
+    "verify": "Verify your Email",
+    "digitCode": "Insert the 6-digit code found in the email in order to verify your email.",
+    "resendCode": "Resend Code",
+    "verifyButton": "Verify"
+  },
+  "verifyPassword": {
+    "resetPassword": "Password Reset"
+  },
+  "menu": {
+    "signIn": "Sign In",
+    "register": "Register",
+    "changePassword": "Change Password"
+  },
+  "header": {
+    "preTitle": "Join Axiance",
+    "title": "A global investment network.",
+    "subTitle": "Refer clients to Axiance and",
+    "subTitleHighlight": " earn competitive payouts",
+    "text": "Benefit from our toolkits and the support to grow your business globally, because we want you to do well.",
+    "ready": "Are you ready?",
+    "risk": "Trading involves significant risk of loss"
+  },
+  "supportForm": {
+    "title": "Contact Us",
+    "subTitle": "If you have any questions or comments about any aspect of our services, please contact us by completing the form below.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "E-Mail",
+    "message": "Your Message"
+  },
+  "footer": {
+    "documents": {
+      "privacy": "Privacy Policy",
+      "cookies": "Cookies",
+      "risk": "Risk Disclosure"
+    },
+    "rights": "Axiance © All rights reserved",
+    "fsa": {
+      "authorised": "Authorised and Regulated: | FSA Licence no: SD036",
+      "tradeName": "Axiance is the trade name used by the Axiance group of companies formerly operating as EverFX (“Axiance”) and it is owned by an entity of the Axiance group.",
+      "legal": {
+        "title": "Legal: ",
+        "subtitle": "This website is operated by Aerarium Limited, with registration no. 8425627-1 and registered address at CT House, Office 9A, Providence, Mahe, Seychelles.",
+        "text": "Any trademarks appearing on this website are the property of their respective owners."
+      },
+      "groupLicences": {
+        "title": "Licenses: ",
+        "text": "Aerarium Limited is licensed by Seychelles Financial Services Authority (FSA) with license no: ",
+        "items": [
+          {
+            "name": "SD036",
+            "url": "https://fsaseychelles.sc/regulated-entities/capital-markets"
+          }
+        ]
+      },
+      "notes": {
+        "title": "Notes: ",
+        "text": "Aerarium Limited does not provide services for the residents of certain countries, such as the United States of America, Canada, Seychelles, Belgium, North Korea etc.",
+        "lines": [
+          "The card transactions are processed by its subsidiary entity, GAAM Digital Progressus Limited, which is located at 78 Spyrou Kyprianou Avenue, Magnum Business Center, 3076, Limassol, Cyprus and with registration no. HE 403613.",
+          "Transactions made through Paysafe Group Limited are processed through Aerarium Limited.",
+          "Services displayed in this website are provided by Aerarium Limited and not any affiliate entity."
+        ]
+      },
+      "riskWarning": {
+        "title": "Risk Warning: ",
+        "text": "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. A high percentage of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Please consider our ",
+        "file": "Risk Disclosure.",
+        "url": "Risk_Disclosure_Axiance.pdf"
+      }
+    },
+    "cysec": {
+      "authorised": "Authorised and Regulated: | CySEC Licence no: 301/16",
+      "tradeName": "Axiance is the trade name used by the Axiance group of companies formerly operating as EverFX (“Axiance”) and it is owned by an entity of the Axiance group.",
+      "legal": {
+        "title": "Legal: ",
+        "subtitle": "This website is operated by ICC Intercertus Capital Limited with registration no. HE346662 and registered address at Antheon 2, Monovoliko 4, Kato Polemidia, 4151 Limassol, Cyprus.",
+        "text": "Any trademarks appearing on this website are the property of their respective owners."
+      },
+      "groupLicences": {
+        "title": "Licenses: ",
+        "text": "ICC Intercertus Capital Ltd. is authorised and regulated by Cyprus Securities and Exchange Commission (CySEC), with license number 301/16. EEA Cross-borders Registration: ",
+        "items": [
+          {
+            "name": "CNMV (Spain) reg. 4256",
+            "url": "https://www.cnmv.es/portal/consultas/ESI/ESISExtranjerasLP.aspx?numero=4256&tipo=CLP"
+          },
+          {
+            "name": "AFM Netherlands",
+            "url": "https://www.afm.nl/en/professionals/registers/vergunningenregisters/beleggingsondernemingen/details?id=E2DCC14C-8314-E711-83EA-005056BE011C"
+          },
+          {
+            "name": "FI Sweden",
+            "url": "https://www.fi.se/en/our-registers/company-register/details?id=152229"
+          },
+          {
+            "name": "KNF Poland",
+            "url": "https://www.knf.gov.pl/en/ENTITIES/entities_search#1220006"
+          }
+        ]
+      },
+      "notes": {
+        "title": "Notes: ",
+        "text": "ICC Intercectus Capital Ltd does not offer its services to residents of certain jurisdictions such as the USA, UK, Belgium, Iran, Canada and North Korea etc. ",
+        "lines": []
+      },
+      "riskWarning": {
+        "title": "Risk Warning: ",
+        "text": "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 70.70% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Please consider our ",
+        "file": "Risk Disclosure.",
+        "url": "Risk_Disclosure_Axiance.pdf"
+      }
+    }
+  },
+  "partner": {
+    "title": "Why become a Partner",
+    "subTitle": "By joining us, you can grow your business with a partner that places transparency and security above all.",
+    "more": "View More",
+    "ib": {
+      "title": "IB Benefits",
+      "benefits": [
+        "Smart tools, widgets & dedicated partner link to help you track every click, impression, and registration",
+        "Customised trading conditions for you and your clients",
+        "Superior trading platform and tools to boost your trading experience",
+        "Advanced PAMM solutions to better manage your clients’ investments",
+        "A fully transparent and regulated trading environment where your and your clients’ data and fund security comes first",
+        "Fast order execution, fully STP",
+        "Dedicated tools to help you track your earnings in real time",
+        "Tailor-made agreements to meet your unique needs",
+        "Smooth integration with your region’s most trustworthy payment solutions"
+      ]
+    },
+    "client": {
+      "title": "Client Benefits",
+      "benefits": [
+        "Quick onboarding and fast-track verification",
+        "Custom trading conditions, depending on the account type",
+        "One-of-a-kind experience with our flexible trading platforms: MT4, Status, Axiance proprietary web-trading solution",
+        "Dedicated account manager & VIP handling 24/5",
+        "Easy deposits and withdrawals",
+        "Comprehensive Trading Central, especially attractive for advanced traders",
+        "A wide range of asset choices, time frames, and markets",
+        "Promos and special Club offers",
+        "Access to free educational materials, webinars, and intelligent trading tools",
+        "A wide range of payment methods to fund their account by: credit/debit card, wire transfer & region-specific e-Wallets"
+      ]
+    }
+  },
+  "slider": {
+    "title": "Earn as you go!",
+    "subTitle": "More referrals, more rewards!",
+    "clients": {
+      "top": "total accumulated",
+      "bottom": "clients"
+    },
+    "income": {
+      "top": "your income per",
+      "bottom": "month"
+    }
+  },
+  "partnership": {
+    "title": "A straight forward partnership",
+    "promote": {
+      "title": "Promote",
+      "text": "Share your partner link with clients & partners"
+    },
+    "introduce": {
+      "title": "Introduce",
+      "text": "Your clients & partners become our clients & partners"
+    },
+    "earn": {
+      "title": "Earn",
+      "text": "The more your clients trade, the more you earn (commission + performance fee)."
+    },
+    "more": {
+      "title": "Earn More",
+      "text": "Refer a partner/IB and earn even more. Add a mark-up fee on top of their commission."
+    }
+  },
+  "accounts": {
+    "title": "Freedom Of Choice",
+    "text": "Whether your clients are professional traders looking for new opportunities to grow your network, EA developers or money managers, we have a flexible range of business solutions to suit their needs.",
+    "registerText": "Register with us today, start introducing clients, and enjoy the payouts."
+  },
+  "cookies": {
+    "title": "This website uses cookies.",
+    "text": "We use cookies to provide you a personalised experience. By using this website you automatically consent that we use cookies.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "cookieWarning": {
+    "cookieWarningTitle": "This website uses cookies.",
+    "cookieWarningMessage": "We use cookies to provide you a personalized experience. By using this website you automatically consent that we use cookies.",
+    "cookieButtonAccept": "Accept"
+  },
+  "topRiskWarning": {
+    "topRiskWarningTitle": "Risk Warning",
+    "topRiskWarningMessage": "CFDs are complex instruments and come with high risk of losing money rapidly due to leverage 70,70% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money. Please consider our Risk Disclosure"
+  },
+  "PopUpModal": {
+    "thankYouPageUpload": {
+      "thankYouTitleUpload": "Thank you",
+      "thankYouSubtitleUpload": "That’s great, you’ve submitted us all the required documents. \n Our agent will now complete your verification process and we will back to you shortly."
+    }
+  }
+}

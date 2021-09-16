@@ -1,0 +1,178 @@
+.profile-page {
+  padding: 20px;
+
+  .banner-container {
+    text-align: center;
+
+    .banner {
+      margin-top: 20px;
+    }
+  }
+
+  .link-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 330px;
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+    padding: 15px 10px;
+    transition: all .25s ease;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      background-color: #d7e265;
+      transform: scale(1.05);
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .text {
+      margin-left: 20px;
+
+      .title {
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      .description {
+        font-size: 10px;
+        width: 180px;
+        color: #7a7a7a;
+      }
+    }
+
+    .content {}
+  }
+
+  .personal-info-form,
+  .my-account-form,
+  .com-preferences,
+  .legal-docs {
+    display: flex;
+    flex-direction: column;
+
+    .head-line {
+      display: flex;
+      font-size: 20px;
+      font-weight: bold;
+      align-items: center;
+      padding-left: 20px;
+
+      .MuiSvgIcon-root {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    .sub-title {
+      padding-top: 20px;
+      padding-left: 70px;
+      font-size: 15px;
+    }
+
+    .content {
+      padding-top: 20px;
+      padding-left: 70px;
+      width: 700px;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+
+      .doc-link {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #535353;
+        text-decoration: none;
+        color: black;
+        margin-top: 10px;
+        margin-right: 20px;
+        padding-bottom: 5px;
+
+        img {
+          width: 35px;
+          padding: 5px;
+        }
+
+        &:hover {
+          color: #ffe200;
+          font-weight: bold;
+
+          img {
+            -webkit-filter: invert(81%) sepia(63%) saturate(1242%) hue-rotate(357deg) brightness(103%) contrast(108%);
+            filter: invert(81%) sepia(63%) saturate(1242%) hue-rotate(357deg) brightness(103%) contrast(108%);
+          }
+        }
+      }
+    }
+  }
+
+  .form {
+    padding-top: 20px;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+
+    div {
+      margin: 5px 0;
+    }
+
+    .PhoneInput {
+      input {
+        padding: 18px;
+        border-radius: 4px;
+        border: 1px solid #b2bec3;
+      }
+    }
+
+  }
+
+  .com-form {
+    padding-top: 20px;
+    padding-left: 70px;
+
+    .section {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #9f9f9f;
+      max-width: 600px;
+    }
+
+    .switch-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .availability {
+      display: flex;
+
+      .days {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hours {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}

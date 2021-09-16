@@ -1,0 +1,279 @@
+{
+  "submit": "Enviar",
+  "join": "Unirse ahora",
+  "risk": "El trading conlleva un riesgo de pérdida significativo",
+  "hello.label": "Hola",
+  "dashboard": {
+    "subtitle": "Para utilizar nuestra plataforma, por favor, complete el proceso de registro.",
+    "social-title": "Manténgase en contacto con nosotros:",
+    "identity": "Verificar identidad",
+    "address": "Verificar dirección",
+    "contract": "Firmar un contrato",
+    "validGovernment": "Utilice un documento de identidad con foto válido emitido por el gobierno.",
+    "residencePermit": "Un permiso de residencia también es un documento de identidad válido.",
+    "contactMethod": "Método de contacto preferido",
+    "pleaseSelect": "Por favor, seleccione",
+    "phone": "Teléfono",
+    "contactTime": "Horario de contacto preferido"
+  },
+  "address": {
+    "documentType": "Elija el tipo de documento",
+    "bankStatement": "Extracto bancario",
+    "utilityBill": "Factura de gastos",
+    "rentalAgreement": "Contrato de alquiler",
+    "taxBill": "Factura de impuestos",
+    "insurance": "Declaración/Certificado Médico/Seguro",
+    "idFront": "Subir documento",
+    "fileNote": "*Solo imágenes y archivos PDF."
+  },
+  "identity": {
+    "ID": "Documento de identidad",
+    "passport": "Pasaporte",
+    "drivingLicense": "Permiso de conducir",
+    "frontSide": "Enviar anverso",
+    "backSide": "Enviar reverso",
+    "fileNote": "*Solo archivos JPEG, PNG y PDF."
+  },
+  "login": {
+    "signin": "Iniciar sesión",
+    "haveAccount": "¿Todavía no tiene una cuenta?",
+    "signup": "Regístrese ahora",
+    "email": "E-Mail",
+    "password": "Contraseña",
+    "forgotPassword": "¿Ha olvidado la contraseña?"
+  },
+  "changePassword": {
+    "changePassword": "Cambiar contraseña",
+    "oldPassword": "Contraseña antigua",
+    "newPassword": "Nueva contraseña"
+  },
+  "createPassword": {
+    "createPassword": "Cree su contraseña",
+    "enterEmail": "Introduzca su dirección de email para",
+    "createPass": "crear su contraseña.",
+    "createPasswordButton": "Crear contraseña"
+  },
+  "newPassword": {
+    "confirmPassword": "Confirmar contraseña"
+  },
+  "register": {
+    "signUp": "Regístrese",
+    "gotAccount": "¿Ya tiene una cuenta?",
+    "fistName": "Nombre",
+    "lastName": "Apellidos",
+    "createAccount": "Crear cuenta",
+    "country": "País de residencia"
+  },
+  "resetPassword": {
+    "forgotPassword": "¿Ha olvidado su contraseña?",
+    "enterEmail": "Introduzca su dirección de email para",
+    "recoverPassword": "recuperar su contraseña.",
+    "reset": "Restablecer contraseña"
+  },
+  "verifyEmail": {
+    "verify": "Verifique su Email",
+    "digitCode": "Introduzca el código de 6 dígitos que recibirá en el correo para verificar su email.",
+    "resendCode": "Reenviar código",
+    "verifyButton": "Verificar"
+  },
+  "verifyPassword": {
+    "resetPassword": "Restablecimiento de contraseña"
+  },
+  "menu": {
+    "signIn": "Iniciar sesión",
+    "register": "Registrarse",
+    "changePassword": "Cambiar contraseña"
+  },
+  "header": {
+    "preTitle": "Únase a Axiance",
+    "title": "Una red de inversión global.",
+    "subTitle": "Refiera clientes a Axiance y",
+    "subTitleHighlight": " gane pagos competitivos",
+    "text": "Benefíciese de nuestras herramientas y soporte para hacer crecer su negocio globalmente, porque queremos que le vaya bien.",
+    "ready": "¿Está listo?",
+    "risk": "El trading conlleva un riesgo de pérdida significativo"
+  },
+  "supportForm": {
+    "title": "Contacte con nosotros",
+    "subTitle": "Si tiene cualquier pregunta o comentario sobre cualquier aspecto de nuestros servicios, por favor, contacte con nosotros completando el siguiente formulario.",
+    "firstName": "Nombre",
+    "lastName": "Apellidos",
+    "email": "E-Mail",
+    "message": "Su mensaje"
+  },
+  "footer": {
+    "documents": {
+      "privacy": "Política de Privacidad",
+      "cookies": "Cookies",
+      "risk": "Declaración de Riesgos"
+    },
+    "rights": "Axiance © Todos los derechos reservados",
+    "fsa": {
+      "authorised": "Autorizado y regulado: | Licencia FSA nº: SD036",
+      "tradeName": "Axiance es el nombre comercial empleado por el grupo de empresas Axiance que anteriormente operaban como EverFX (“Axiance”) y es propiedad de una entidad del grupo Axiance.",
+      "legal": {
+        "title": "Legal: ",
+        "subtitle": "este sitio web lo gestiona Aerarium Limited, con el nº de registro 8425627-1 y domicilio social en CT House, Office 9A, Providence, Mahe, Seychelles.",
+        "text": "Todas las marcas comerciales que aparecen en este sitio web son propiedad de sus respectivos propietarios."
+      },
+      "groupLicences": {
+        "title": "Licencias: ",
+        "text": "Aerarium Limited tiene licencia de la Autoridad de Servicios Financieros de Seychelles (FSA) con el licencia nº: ",
+        "items": [
+          {
+            "name": "SD036",
+            "url": "https://fsaseychelles.sc/regulated-entities/capital-markets"
+          }
+        ]
+      },
+      "notes": {
+        "title": "Notas: ",
+        "text": "Aerarium Limited no ofrece servicios a los residentes de ciertos países, tales como Estados Unidos de América, Canadá, Seychelles, Bélgica, Corea del Norte, etc.",
+        "lines": [
+          "Las transacciones con tarjetas las procesa su entidad subsidiaria, GAAM Digital Progressus Limited, que se encuentra en 78 Spyrou Kyprianou Avenue, Magnum Business Center, 3076, Limasol, Chipre y con el nº de registro HE 403613.",
+          "Las transacciones realizadas a través de Paysafe Group Limited se procesan a través de Aerarium Limited.",
+          "Los servicios que se muestran en este sitio web los proporciona Aerarium Limited y no otra entidad afiliada."
+        ]
+      },
+      "riskWarning": {
+        "title": "Aviso de riesgos: ",
+        "text": "los CFDs son instrumentos complejos y conllevan un alto riesgo de pérdida rápida de dinero debido al apalancamiento. Un elevado porcentaje de las cuentas de inversores minoristas pierden dinero al operar con CFDs Debe plantearse si entiende cómo funcionan los CFDs y si puede permitirse el alto riesgo de perder su dinero. Tenga en cuenta nuestra ",
+        "file": "Declaración de Riesgos.",
+        "url": "Risk_Disclosure_Axiance.pdf"
+      }
+    },
+    "cysec": {
+      "authorised": "Autorizado y regulado: | Licencia CySEC nº: 301/16",
+      "tradeName": "Axiance es el nombre comercial empleado por el grupo de empresas Axiance que anteriormente operaban como EverFX (“Axiance”) y es propiedad de una entidad del grupo Axiance. ",
+      "legal": {
+        "title": "Legal: ",
+        "subtitle": "Este sitio web lo gestiona ICC Intercertus Capital Ltd con nº de registro HE346662 y domicilio social en 78 Spyrou Kyprianou Avenue, MAGNUM BUSINESS CENTER, 3076, Limasol, Chipre.",
+        "text": "Todas las marcas comerciales que aparecen en este sitio web son propiedad de sus respectivos propietarios."
+      },
+      "groupLicences": {
+        "title": "Licencias: ",
+        "text": "ICC Intercertus Capital Ltd está autorizado y regulado por la Comisión del Mercado de Valores de Chipre (CySEC), con licencia número  301/16. Registro Transfronterizo EEE: ",
+        "items": [
+          {
+            "name": "CNMV (España) reg. 4256",
+            "url": "https://www.cnmv.es/portal/consultas/ESI/ESISExtranjerasLP.aspx?numero=4256&tipo=CLP"
+          },
+          {
+            "name": "AFM de Países Bajos",
+            "url": "https://www.afm.nl/en/professionals/registers/vergunningenregisters/beleggingsondernemingen/details?id=E2DCC14C-8314-E711-83EA-005056BE011C"
+          },
+          {
+            "name": "FI Suecia",
+            "url": "https://www.fi.se/en/our-registers/company-register/details?id=152229"
+          },
+          {
+            "name": "KNF de Polonia",
+            "url": "https://www.knf.gov.pl/en/ENTITIES/entities_search#1220006"
+          }
+        ]
+      },
+      "notes": {
+        "title": "Notas: ",
+        "text": "ICC Intercectus Capital Ltd no ofrece sus servicios a los residentes en ciertas jurisdicciones, tales como los Estados Unidos, Reino Unido, Bélgica, Irán, Canadá, Corea del Norte, etc.",
+        "lines": []
+      },
+      "riskWarning": {
+        "title": "Aviso de riesgos: ",
+        "text": "Los CFDs son instrumentos complejos y conllevan un riesgo elevado de perder dinero rápidamente debido al apalancamiento. El 70,70 % de las cuentas de inversores minoristas pierden dinero al operar con CFDs usando este proveedor. Debe plantearse si entiende cómo funcionan los CFDs y si puede permitirse el alto riesgo de perder su dinero. Tenga en cuenta nuestra ",
+        "file": "Declaración de Riesgos.",
+        "url": "Risk_Disclosure_Axiance.pdf"
+      }
+    }
+  },
+  "partner": {
+    "title": "Por qué convertirse en socio",
+    "subTitle": "Al unirse a nosotros puede hacer que su negocio crezca junto a un socio que pone la transparencia y la seguridad por encima de todo.",
+    "more": "Ver más",
+    "ib": {
+      "title": "Beneficios del IB",
+      "benefits": [
+        "Herramientas inteligentes, widgets y un enlace de socio dedicado para ayudarle a hacer un seguimiento de cada clic, impresión y registro",
+        "Condiciones de trading personalizadas para usted y sus clientes",
+        "Herramientas y una plataforma de trading superior para mejorar su experiencia de trading",
+        "Soluciones PAMM avanzadas para gestionar mejor las inversiones de sus clientes",
+        "Un entorno de trading totalmente transparente y regulado en el que la seguridad de sus fondos y datos y los de sus clientes es lo primero",
+        "Ejecución de órdenes rápida, totalmente STP",
+        "Herramientas dedicadas para ayudarle a hacer un seguimiento de sus ingresos en tiempo real",
+        "Contratos personalizados para satisfacer sus necesidades únicas",
+        "Integración fluida con las soluciones de pago de confianza de su región"
+      ]
+    },
+    "client": {
+      "title": "Beneficios del Cliente",
+      "benefits": [
+        "Incorporación rápida y verificación ágil",
+        "Condiciones de trading personalizadas, dependiendo del tipo de cuenta",
+        "Experiencia única con nuestras flexibles plataformas de trading: MT4, Status, la solución propietaria de web-trading de Axiance",
+        "Gestor de cuenta dedicado y gestión VIP 24/5",
+        "Depósitos y retiradas fáciles",
+        "Trading Central completo, especialmente atractivo para operadores avanzados",
+        "Una amplia variedad de opciones de activos, plazos de tiempo y mercados",
+        "Promociones y ofertas especiales del Club",
+        "Acceso gratuito a materiales educativos, webinarios y herramientas de trading inteligentes",
+        "Una amplia selección de métodos de pago para añadir fondos en sus cuentas mediante: tarjeta de crédito/débito, transferencia bancaria y monederos electrónicos específicos de cada región"
+      ]
+    }
+  },
+  "slider": {
+    "title": "¡Gane mientras avanza!",
+    "subTitle": "¡Más referidos, más recompensas!",
+    "clients": {
+      "top": "clientes totales",
+      "bottom": "acumulados"
+    },
+    "income": {
+      "top": "sus ingresos al",
+      "bottom": "mes"
+    }
+  },
+  "partnership": {
+    "title": "Una asociación sencilla y directa",
+    "promote": {
+      "title": "Promocione",
+      "text": "Comparta su enlace de socio con clientes y socios"
+    },
+    "introduce": {
+      "title": "Presente",
+      "text": "Sus clientes y socios se convierten en nuestros clientes y socios"
+    },
+    "earn": {
+      "title": "Gane",
+      "text": "Cuanto más operen sus clientes, más gana usted (comisión + tarifa de rendimiento)."
+    },
+    "more": {
+      "title": "Gane más",
+      "text": "Recomiende a un socio/IB y gane incluso más. Añada una margen de tarifa a su comisión."
+    }
+  },
+  "accounts": {
+    "title": "Libertad de elección",
+    "text": "No importa si sus clientes son operadores profesionales buscando nuevas oportunidades para hacer crecer su red, desarrolladores de EAs o gestores de fondos, tenemos una selección flexible de soluciones empresariales que se ajusta a sus necesidades.",
+    "registerText": "Regístrese con nosotros hoy, empiece a presentarnos clientes y disfrute de los pagos."
+  },
+  "cookies": {
+    "title": "Este sitio web utiliza cookies.",
+    "text": "Utilizamos cookies para proporcionarle una experiencia personalizada. Al usar este sitio web da automáticamente su consentimiento para que utilicemos cookies.",
+    "accept": "Aceptar",
+    "decline": "Rechazar"
+  },
+  "cookieWarning": {
+    "cookieWarningTitle": "Este sitio web utiliza cookies.",
+    "cookieWarningMessage": "Utilizamos cookies para proporcionarle una experiencia personalizada. Al usar este sitio web da automáticamente su consentimiento para que utilicemos cookies.",
+    "cookieButtonAccept": "Aceptar"
+  },
+  "topRiskWarning": {
+    "topRiskWarningTitle": "Aviso de riesgos",
+    "topRiskWarningMessage": "Los CFDs son instrumentos complejos que conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. El 70,70% de las cuentas de inversores minoristas pierden dinero al operar usando CFDs con este proveedor. Debe valorar si entiende cómo funcionan los CFDs y si puede permitirse asumir el alto riesgo de perder su dinero. Por favor, tenga en cuenta nuestra Declaración de Riesgos"
+  },
+  "PopUpModal": {
+    "thankYouPageUpload": {
+      "thankYouTitleUpload": "Gracias",
+      "thankYouSubtitleUpload": "Estupendo, nos ha enviado todos los documentos requeridos. \n Ahora nuestro agente completará su proceso de verificación y se pondrá en contacto con usted a la mayor brevedad."
+    }
+  }
+}
