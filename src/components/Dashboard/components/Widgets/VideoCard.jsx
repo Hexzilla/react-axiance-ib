@@ -1,16 +1,20 @@
 import React from 'react';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import { IconButton } from '@material-ui/core';
 import { useSnackbar } from 'notistack';
 import './styles.scss';
 
-const VideoCard = ({ thumbnail, url }) => {
+const VideoCard = ({ thumbnail, url, onPlayVideo }) => {
   const { enqueueSnackbar } = useSnackbar();
+
   return (
     <div className="video-card">
       <img src={thumbnail} alt="" />
       <div className="bottom">
         <div className="icon">
-          <VisibilityIcon />
+          <IconButton onClick={() => onPlayVideo(url)}>
+            <VisibilityIcon />
+          </IconButton>
           <div className="txt-preview">Preview</div>
         </div>
         <button

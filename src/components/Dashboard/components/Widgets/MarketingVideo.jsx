@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import VideoCard from './VideoCard';
+import VideoPlayer from './VideoPlayer';
 import Popover from '../CustomPopover';
 import './styles.scss';
 
@@ -31,6 +32,8 @@ const MarketingVideo = () => {
   const [videoSize, setVideoSize] = useState(0);
   const [language, setLanguage] = useState('en');
   const [theme, setTheme] = useState(0);
+  const [playState, setPlayState] = useState(false);
+  const [videoUrl, setVideoUrl] = useState();
 
   useEffect(() => {
     const samples = require('./videos.json');
@@ -47,6 +50,19 @@ const MarketingVideo = () => {
 
   const handleChangeTheme = (event) => {
     setTheme(Number(event.target.value));
+  };
+
+  const onPlayVideo = (url) => {
+    // eslint-disable-next-line no-console
+    console.log('onPlayVideo', url);
+    setVideoUrl(url);
+    setPlayState(true);
+  };
+
+  const onStopPlay = () => {
+    // eslint-disable-next-line no-console
+    console.log('onStopPlay');
+    setPlayState(false);
   };
 
   const filterVidoes = (language, size, theme) => {
@@ -138,10 +154,11 @@ const MarketingVideo = () => {
             </span>
           </div>
         </div>
+        <VideoPlayer open={playState} url={videoUrl} onClose={onStopPlay} />
         <div className="videos">
           {filteredVidoes.map((video) => (
             // eslint-disable-next-line react/jsx-props-no-spreading
-            <VideoCard key={video.id} {...video} />
+            <VideoCard key={video.id} {...video} onPlayVideo={onPlayVideo} />
           ))}
         </div>
       </div>
