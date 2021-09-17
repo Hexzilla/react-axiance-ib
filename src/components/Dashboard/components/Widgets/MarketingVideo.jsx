@@ -5,60 +5,15 @@ import VideoCard from './VideoCard';
 import VideoPlayer from './VideoPlayer';
 import Popover from '../CustomPopover';
 import './styles.scss';
-import videos from './videos';
+import filterVideos from '../../../../helpers/FilterVideosHelper';
 import videoOptions from '../../../../utils/videoOptions';
 
 const MarketingVideo = () => {
   const [videoSize, setVideoSize] = useState(0);
   const [language, setLanguage] = useState(0);
   const [theme, setTheme] = useState(0);
-  const [playState, setPlayState] = useState(false);
   const [videoUrl, setVideoUrl] = useState();
   const [filteredVideos, setFilteredVideos] = useState([]);
-
-  const handleChangeLanguage = (event) => {
-    setLanguage(Number(event.target.value));
-  };
-
-  const handleChangeSize = (event) => {
-    setVideoSize(Number(event.target.value));
-  };
-
-  const handleChangeTheme = (event) => {
-    setTheme(Number(event.target.value));
-  };
-
-  const onPlayVideo = (url) => {
-    setVideoUrl(url);
-    setPlayState(true);
-  };
-
-  const onStopPlay = () => {
-    setPlayState(false);
-  };
-
-  const filterVideos = (Videolanguage, size, VideoTheme) => {
-    let filtered = videos;
-    if (Videolanguage !== 0) {
-      const option = videoOptions.languageOptions.find((l) => l.key === Videolanguage);
-      if (option) {
-        filtered = filtered.filter((v) => v.language === option.name);
-      }
-    }
-    if (size !== 0) {
-      const option = videoOptions.sizeOptions.find((it) => it.key === size);
-      if (option) {
-        filtered = filtered.filter((it) => it.size === option.name);
-      }
-    }
-    if (VideoTheme !== 0) {
-      const option = videoOptions.themeOptions.find((it) => it.key === VideoTheme);
-      if (option) {
-        filtered = filtered.filter((it) => it.theme === option.name);
-      }
-    }
-    return filtered;
-  };
 
   useEffect(() => {
     setFilteredVideos(filterVideos(language, videoSize, theme));
@@ -71,7 +26,12 @@ const MarketingVideo = () => {
           <label htmlFor="Language" className="optionsLabel">
             Language
           </label>
-          <select className="optionsSelector" id="language" value={language} onChange={handleChangeLanguage}>
+          <select
+            className="optionsSelector"
+            id="language"
+            value={language}
+            onChange={(e) => setLanguage(Number(e.target.value))}
+          >
             {videoOptions.languageOptions.map((option) => (
               <option key={option.key} value={option.key}>{option.name}</option>
             ))}
@@ -83,7 +43,12 @@ const MarketingVideo = () => {
             <label htmlFor="size" className="optionsLabel">
               Size
             </label>
-            <select className="optionsSelector" id="size" value={videoSize} onChange={handleChangeSize}>
+            <select
+              className="optionsSelector"
+              id="size"
+              value={videoSize}
+              onChange={(e) => setVideoSize(Number(e.target.value))}
+            >
               {videoOptions.sizeOptions.map((option) => (
                 <option key={option.key} value={option.key}>{option.name}</option>
               ))}
@@ -96,7 +61,12 @@ const MarketingVideo = () => {
             <label htmlFor="Theme" className="optionsLabel">
               Theme
             </label>
-            <select className="optionsSelector" id="theme" value={theme} onChange={handleChangeTheme}>
+            <select
+              className="optionsSelector"
+              id="theme"
+              value={theme}
+              onChange={(e) => setTheme(Number(e.target.value))}
+            >
               {videoOptions.themeOptions.map((option) => (
                 <option key={option.key} value={option.key}>{option.name}</option>
               ))}
@@ -125,15 +95,14 @@ const MarketingVideo = () => {
             </span>
           </div>
         </div>
-        <VideoPlayer open={playState} url={videoUrl} onClose={onStopPlay} />
+        <VideoPlayer open={videoUrl != null} url={videoUrl} onClose={() => setVideoUrl(null)} />
         <div className="videos">
           {filteredVideos.map((video) => (
-            <VideoCard key={video.id} {...video} onPlayVideo={onPlayVideo} />
+            <VideoCard key={video.id} {...video} onPlayVideo={(url) => setVideoUrl(url)} />
           ))}
         </div>
       </div>
     </div>
   );
 };
-
 export default MarketingVideo;
