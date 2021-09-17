@@ -386,8 +386,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  .video-card,
-  .landing-page-card {
+  .video-card {
     width: 500px;
     padding: 10px;
     margin-left: 20px;
@@ -396,6 +395,9 @@
 
     img {
       width: 100%;
+    }
+    .nd-btn{
+    cursor: pointer;
     }
 
     .bottom {

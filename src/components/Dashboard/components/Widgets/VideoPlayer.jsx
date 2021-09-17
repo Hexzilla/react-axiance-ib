@@ -11,6 +11,8 @@ const VideoPlayer = ({ open, url, onClose }) => (
     center
   >
     <ReactPlayer
+      playing={false}
+      controls
       url={url}
     />
   </Modal>
