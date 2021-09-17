@@ -43,7 +43,7 @@ const videos = [
     id: '6',
     thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video6.png',
     url: 'https://axiance-assets.netlify.app/portal/videos/videos/video6.mp4',
-    language: 'Spanish',
+    language: 'English',
     size: '1920x1080',
     theme: 'Promotional',
   },

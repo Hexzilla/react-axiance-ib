@@ -6,10 +6,17 @@ import './styles.scss';
 
 const VideoCard = ({ thumbnail, url, onPlayVideo }) => {
   const { enqueueSnackbar } = useSnackbar();
-
+  function copyCode(code) {
+    navigator.clipboard.writeText(code);
+    enqueueSnackbar('Url copied!', {
+      variant: 'success',
+    });
+  }
   return (
     <div className="video-card">
-      <img src={thumbnail} alt="" />
+      <button type="button" className="bottom" onClick={() => onPlayVideo(url)}>
+        <img src={thumbnail} alt="" />
+      </button>
       <div className="bottom">
         <div className="icon">
           <IconButton onClick={() => onPlayVideo(url)}>
@@ -19,21 +26,14 @@ const VideoCard = ({ thumbnail, url, onPlayVideo }) => {
         </div>
         <button
           id="clipboardCopy"
-          onClick={() => {
-            async function clipboardCopy() {
-              await navigator.clipboard.writeText(url);
-            }
-            document.getElementById('clipboardCopy').addEventListener('click', clipboardCopy);
-            enqueueSnackbar('Copied', {
-              variant: 'info',
-            });
-          }}
+          onClick={() => copyCode(url)}
           className="nd-btn"
           type="button"
         >
           Copy Link
         </button>
       </div>
+
     </div>
   );
 };
