@@ -223,7 +223,7 @@ function Register({ entity }) {
           <input
             type="submit"
             className="submit"
-            disabled={!submitLoading}
+            disabled={submitLoading}
             value={t('register.createAccount')}
           />
         </form>

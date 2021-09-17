@@ -10,7 +10,7 @@ const MiniBalanceLabel = () => {
 
   return (
     <div className="nd-mini-acc-balance">
-      <div className="nd-title">Balance:</div>
+      <div className="nd-title">Wallet Balance</div>
       <Popover
         showArrow
         triggerNode={(

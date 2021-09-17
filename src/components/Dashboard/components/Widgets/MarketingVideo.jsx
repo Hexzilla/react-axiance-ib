@@ -5,7 +5,7 @@ import VideoCard from './VideoCard';
 import VideoPlayer from './VideoPlayer';
 import Popover from '../CustomPopover';
 import './styles.scss';
-import filterVideos from './FilterVideos';
+import filterVideos from '../../../../helpers/FilterVideosHelper';
 import videoOptions from '../../../../utils/videoOptions';
 
 const MarketingVideo = () => {
@@ -105,5 +105,4 @@ const MarketingVideo = () => {
     </div>
   );
 };
-
 export default MarketingVideo;
