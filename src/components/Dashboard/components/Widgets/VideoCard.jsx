@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { IconButton } from '@material-ui/core';
 import { useSnackbar } from 'notistack';
 import './styles.scss';
 
 const VideoCard = ({ thumbnail, url, onPlayVideo }) => {
+  const [vidoeLoaded, setVidoeLoaded] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   function copyCode(code) {
     navigator.clipboard.writeText(code);
@@ -14,24 +15,28 @@ const VideoCard = ({ thumbnail, url, onPlayVideo }) => {
   }
   return (
     <div className="video-card">
-      <button type="button" className="bottom" onClick={() => onPlayVideo(url)}>
-        <img src={thumbnail} alt="" />
-      </button>
-      <div className="bottom">
-        <div className="icon">
-          <IconButton onClick={() => onPlayVideo(url)}>
-            <VisibilityIcon />
-          </IconButton>
-          <div className="txt-preview">Preview</div>
+      <div className={vidoeLoaded ? 'video-loaded' : 'video-loaded video-loading'}>
+        <img
+          src={thumbnail}
+          alt=""
+          onLoad={() => setTimeout(() => setVidoeLoaded(true), 250)}
+        />
+        <div className="bottom">
+          <div className="icon">
+            <IconButton onClick={() => onPlayVideo(url)}>
+              <VisibilityIcon />
+            </IconButton>
+            <div className="txt-preview">Preview</div>
+          </div>
+          <button
+            id="clipboardCopy"
+            onClick={() => copyCode(url)}
+            className="nd-btn"
+            type="button"
+          >
+            Copy Link
+          </button>
         </div>
-        <button
-          id="clipboardCopy"
-          onClick={() => copyCode(url)}
-          className="nd-btn"
-          type="button"
-        >
-          Copy Link
-        </button>
       </div>
     </div>
   );

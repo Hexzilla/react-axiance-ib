@@ -391,16 +391,26 @@
 
   .video-card {
     width: 500px;
+    min-height: 333px;
     padding: 10px;
     margin-left: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #00000029;
 
+    .video-loaded {
+      transition: width ease 0.75s, height ease 0.75s, filter ease 0.75s;
+    }
+
+    .video-loading {
+      filter: blur(20px);
+    }
+
     img {
       width: 100%;
     }
+
     .nd-btn{
-    cursor: pointer;
+      cursor: pointer;
     }
 
     .bottom {
