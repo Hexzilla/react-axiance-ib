@@ -4,10 +4,10 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import PublicIcon from '@material-ui/icons/Public';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 import MiniBalanceLabel from './components/MiniBalanceLabel';
 import WebSideMenu from './components/WebSideMenu';
+import BurgerMenu from './components/BurgerMenu';
 import BlueStripe from './components/BlueStripe';
 import ProfileLabel from './components/ProfileLabel';
 
@@ -48,9 +48,7 @@ const Layout = ({ children }) => (
       </div>
     </div>
     <div className="nd-mobile-header">
-      <div className="nd-burger-menu-trigger">
-        <MenuIcon />
-      </div>
+      <BurgerMenu />
       <div className="nd-logo">
         <img src="https://client.axiance.com/static/media/logo.5683ce9d.svg" alt="axiance" />
       </div>
