@@ -1,5 +1,5 @@
 .my-profile {
-  width: 45%;
+  width: 100%;
   padding-right: 10px;
 
   .name {
@@ -58,7 +58,8 @@
 }
 
 .market-analysis {
-  width: 30%;
+  width: 100%;
+  text-align: center;
 
   .name {
     margin-top: 0;
@@ -100,8 +101,8 @@
   width: 100%;
 
   .carousel {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
 
     ul.slides {
       display: block;
