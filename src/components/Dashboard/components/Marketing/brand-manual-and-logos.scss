@@ -2,6 +2,7 @@
 
 .brand-manual-and-logos {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 30px;
 
   @media (max-width: $breakpoint-mobile) {
@@ -10,6 +11,7 @@
 
   .card-container {
     margin-right: 150px;
+    margin-bottom: 60px;
     text-align: center;
 
     @media (max-width: $breakpoint-tablet) {

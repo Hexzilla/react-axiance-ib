@@ -284,7 +284,6 @@
 
   .referralSelectors {
     display: flex;
-    box-sizing: border-box;
 
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;
