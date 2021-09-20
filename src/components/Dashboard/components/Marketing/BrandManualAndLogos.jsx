@@ -14,7 +14,7 @@ const BMALCard = ({ path, title }) => (
 );
 
 const BrandManualAndLogos = () => {
-  const bmalCards = [{ path: 'banner-1.png', title: 'Brand Manual & Logo' }, { path: 'banner-2.png', title: 'Brand Manual & Logo' }];
+  const bmalCards = [{ path: 'banner-1.png', title: 'Brand Manual & Logo' }, { path: 'banner-2.png', title: 'Brand Manual & Logo' }, { path: 'banner-1.png', title: 'Brand Manual & Logo' }, { path: 'banner-2.png', title: 'Brand Manual & Logo' }];
 
   return (
     <div className="brand-manual-and-logos">

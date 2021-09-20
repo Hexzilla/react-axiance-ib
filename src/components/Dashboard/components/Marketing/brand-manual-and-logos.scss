@@ -1,10 +1,25 @@
+@import '../../../../styles/App.scss';
+
 .brand-manual-and-logos {
   display: flex;
   padding-top: 30px;
 
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+  }
+
   .card-container {
     margin-right: 150px;
     text-align: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-right: 60px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-right: 0px;
+      margin-bottom: 60px;
+    }
 
     .image-area {
       background-color: #eeedee;
@@ -15,6 +30,10 @@
 
       img {
         width: 185px;
+
+        @media (max-width: $breakpoint-mobile) {
+          width: 100%;
+        }
       }
     }
 

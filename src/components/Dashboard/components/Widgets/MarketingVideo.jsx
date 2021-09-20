@@ -38,40 +38,36 @@ const MarketingVideo = () => {
           </select>
         </div>
 
-        <div className="referralSelectors">
-          <div className="selector">
-            <label htmlFor="size" className="optionsLabel">
-              Size
-            </label>
-            <select
-              className="optionsSelector"
-              id="size"
-              value={videoSize}
-              onChange={(e) => setVideoSize(Number(e.target.value))}
-            >
-              {videoOptions.sizeOptions.map((option) => (
-                <option key={option.key} value={option.key}>{option.name}</option>
-              ))}
-            </select>
-          </div>
+        <div className="selector">
+          <label htmlFor="size" className="optionsLabel">
+            Size
+          </label>
+          <select
+            className="optionsSelector"
+            id="size"
+            value={videoSize}
+            onChange={(e) => setVideoSize(Number(e.target.value))}
+          >
+            {videoOptions.sizeOptions.map((option) => (
+              <option key={option.key} value={option.key}>{option.name}</option>
+            ))}
+          </select>
         </div>
 
-        <div className="referralSelectors">
-          <div className="selector">
-            <label htmlFor="Theme" className="optionsLabel">
-              Theme
-            </label>
-            <select
-              className="optionsSelector"
-              id="theme"
-              value={theme}
-              onChange={(e) => setTheme(Number(e.target.value))}
-            >
-              {videoOptions.themeOptions.map((option) => (
-                <option key={option.key} value={option.key}>{option.name}</option>
-              ))}
-            </select>
-          </div>
+        <div className="selector">
+          <label htmlFor="Theme" className="optionsLabel">
+            Theme
+          </label>
+          <select
+            className="optionsSelector"
+            id="theme"
+            value={theme}
+            onChange={(e) => setTheme(Number(e.target.value))}
+          >
+            {videoOptions.themeOptions.map((option) => (
+              <option key={option.key} value={option.key}>{option.name}</option>
+            ))}
+          </select>
         </div>
 
       </div>
