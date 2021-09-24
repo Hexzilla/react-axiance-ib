@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSnackbar } from 'notistack';
-import '../../styles/UserData.scss';
+import '../../styles/Onboarding/UserData.scss';
 import { useTranslation } from 'react-i18next';
 import { TimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';

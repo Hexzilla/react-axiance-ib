@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {
   ChangePasswordPage,
+  DocumentVerificationPage,
   DashboardPage,
   EmbedPage,
   LandingPage,
@@ -14,6 +15,7 @@ import {
   VerifyEmailPasswordPage,
   CreatePasswordPage,
   SignOutPage,
+  QuestionnairePage,
 } from '../pages';
 import { RiskWarning } from '../components/landingPage';
 
@@ -33,6 +35,16 @@ const EuPage = () => (
         path="/register"
         exact
         component={() => <RegisterPage entity={entity} />}
+      />
+      <Route
+        path="/documents"
+        exact
+        component={() => <DocumentVerificationPage entity={entity} />}
+      />
+      <Route
+        path="/questionnaire"
+        exact
+        component={() => <QuestionnairePage entity={entity} />}
       />
       <Route
         path="/dashboard"

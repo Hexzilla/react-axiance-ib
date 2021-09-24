@@ -1,24 +1,55 @@
 import React, { useState, useEffect } from 'react';
+import { useSnackbar } from 'notistack';
 import './Banners.scss';
 import SingleBanner from './SingleBanner';
 import BannerOptionsBox from './BannerOptionsBox';
 import {
-  languageOptions, sizeOptions, ibLink, bannerList,
+  languageOptions, sizeOptions, bannerList,
 } from '../../../../utils/bannerOptions';
 import { bannerHelper } from '../../../../helpers';
+import { userController } from '../../../../controllers';
 
-const Banners = () => {
+const Banners = ({ entity }) => {
+  const { enqueueSnackbar } = useSnackbar();
   const [language, setLanguage] = useState('all');
   const [size, setSize] = useState({ width: '300', height: '250' });
   const [theme, setTheme] = useState('all');
   const [showPopupOptions, setShowPopupOptions] = useState(false);
   const [popupOptions, setPopupOptions] = useState({});
+  const [affiliateUrl, setAffiliateUrl] = useState('');
+  const [affiliateData, setAffiliateData] = useState();
+  const [campaign, setCampaign] = useState();
   const [banners, setBanners] = useState([{
-    ibLink,
     language,
     size,
     theme,
   }]);
+
+  useEffect(async () => {
+    const affiliateDataFetch = await JSON.parse(
+      localStorage.getItem('affiliateData'),
+    );
+    setCampaign(Object.keys(affiliateDataFetch.campaigns)[0]);
+    setAffiliateData(affiliateDataFetch);
+  }, []);
+
+  useEffect(async () => {
+    if (affiliateData) {
+      try {
+        const affiliateUrlFetch = await userController.generateAffiliateUrl(
+          affiliateData.refid,
+          campaign,
+          'registration',
+          entity,
+        );
+        setAffiliateUrl(affiliateUrlFetch);
+      } catch (error) {
+        enqueueSnackbar(error.message, {
+          variant: 'error',
+        });
+      }
+    }
+  }, [affiliateData]);
 
   useEffect(async () => {
     if (language === 'all' && theme === 'all') {
@@ -49,7 +80,7 @@ const Banners = () => {
           theme={popupOptions.theme}
           size={popupOptions.size}
           language={popupOptions.language}
-          ibLink={popupOptions.ibLink}
+          ibLink={affiliateUrl}
         />
       ) : null}
       <div className="bannerSelectors">
@@ -117,6 +148,7 @@ const Banners = () => {
         {banners.length > 0 ? banners.map((options) => (
           <div
             className="singleBannerBox"
+            key={options.theme + options.size.height + options.size.width + options.language}
             role="button"
             tabIndex="0"
             onClick={() => showBannerOptions(options)}
@@ -126,7 +158,7 @@ const Banners = () => {
               theme={options.theme}
               size={options.size}
               language={options.language}
-              ibLink={options.ibLink}
+              ibLink={affiliateUrl}
             />
           </div>
         ))

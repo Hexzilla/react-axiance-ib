@@ -3,6 +3,7 @@ import IntroduceIcon from './introduce.png';
 import MoreIcon from './more.png';
 import PromoteIcon from './promote.png';
 import ThankYouIcon from './thankYouIcon.png';
+import DisableIcon from './disableIcon.png';
 
 export {
   EarnIcon,
@@ -10,4 +11,5 @@ export {
   MoreIcon,
   PromoteIcon,
   ThankYouIcon,
+  DisableIcon,
 };

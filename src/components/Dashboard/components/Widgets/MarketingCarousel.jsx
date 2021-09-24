@@ -1,61 +1,63 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useEffect, useRef, useState } from 'react';
+
+import {
+  Banner1, Banner2, Banner3, Banner4,
+} from '../../../../media/images/banner/index';
 import './styles.scss';
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
-const MarketingCarousel = () => (
-  <div className="marketing-carousel">
-    <div className="carousel">
-      <ul className="slides">
-        <input type="radio" name="radio-buttons" id="img-1" checked />
-        <li className="slide-container">
-          <div className="slide-image">
-            <div className="img" style={{ backgroundImage: 'url("/assets/dashboard/marketing-banner/commosities@2x.png")' }} />
-          </div>
-          <div className="carousel-controls">
-            <label htmlFor="img-3" className="prev-slide">
-              <span>&lsaquo;</span>
-            </label>
-            <label htmlFor="img-2" className="next-slide">
-              <span>&rsaquo;</span>
-            </label>
-          </div>
-        </li>
-        <input type="radio" name="radio-buttons" id="img-2" />
-        <li className="slide-container">
-          <div className="slide-image">
-            <div className="img" style={{ backgroundImage: 'url("/assets/dashboard/marketing-banner/trading-central-banner@2x.png")' }} />
-          </div>
-          <div className="carousel-controls">
-            <label htmlFor="img-1" className="prev-slide">
-              <span>&lsaquo;</span>
-            </label>
-            <label htmlFor="img-3" className="next-slide">
-              <span>&rsaquo;</span>
-            </label>
-          </div>
-        </li>
-        <input type="radio" name="radio-buttons" id="img-3" />
-        <li className="slide-container">
-          <div className="slide-image">
-            <div className="img" style={{ backgroundImage: 'url("/assets/dashboard/marketing-banner/welcome-banner@2x.png")' }} />
-          </div>
-          <div className="carousel-controls">
-            <label htmlFor="img-2" className="prev-slide">
-              <span>&lsaquo;</span>
-            </label>
-            <label htmlFor="img-1" className="next-slide">
-              <span>&rsaquo;</span>
-            </label>
-          </div>
-        </li>
-        <div className="carousel-dots">
-          <label htmlFor="img-1" className="carousel-dot" id="img-dot-1" />
-          <label htmlFor="img-2" className="carousel-dot" id="img-dot-2" />
-          <label htmlFor="img-3" className="carousel-dot" id="img-dot-3" />
-        </div>
-      </ul>
-    </div>
-  </div>
-);
+const banners = [Banner1, Banner2, Banner3, Banner4];
+const delay = 2500;
 
-export default MarketingCarousel;
+export default function MarketingCarousel() {
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () => setIndex((prevIndex) => (prevIndex === banners.length - 1 ? 0 : prevIndex + 1)),
+      delay,
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
+  return (
+    <div className="marketing-carousel">
+      <div className="slideshow">
+        <div
+          className="slideshowSlider"
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        >
+          {banners.map((banner) => (
+            <div
+              className="slide"
+              style={{ backgroundImage: `url(${banner})` }}
+            />
+          ))}
+        </div>
+
+        <div className="slideshowDots">
+          {banners.map((_, idx) => (
+            <input
+              type="button"
+              className={`slideshowDot${index === idx ? ' active' : ''}`}
+              onClick={() => {
+                setIndex(idx);
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

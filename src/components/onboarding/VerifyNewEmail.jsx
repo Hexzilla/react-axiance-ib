@@ -5,7 +5,7 @@ import { withRouter, useHistory } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import ReactCodeInput from 'react-code-input';
 import { userController } from '../../controllers';
-import '../../styles/VerifyEmail.scss';
+import '../../styles/Onboarding/VerifyEmail.scss';
 
 function VerifyNewEmail({ uuid }) {
   const [user, setUser] = useState({});

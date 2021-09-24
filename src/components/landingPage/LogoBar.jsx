@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/LogoBar.scss';
+import '../../styles/LandingPage/LogoBar.scss';
 import Zoom from 'react-reveal/Zoom';
 import {
   Visa, Mastercard, Bank, Skrill, Sofort, Trustly,

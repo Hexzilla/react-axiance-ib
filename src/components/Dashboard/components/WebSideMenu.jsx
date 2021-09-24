@@ -6,8 +6,7 @@ const SideMenuItem = ({
   svg, name, path,
 }) => {
   const location = useLocation();
-  const paths = location.pathname.split('/');
-  const isActive = paths[paths.length - 1] === path;
+  const isActive = location.pathname === path;
 
   return (
     <Link className="nd-side-menu-item" to={path} role="button" tabIndex={0}>
@@ -19,10 +18,11 @@ const SideMenuItem = ({
 
 const WebSideMenu = () => (
   <div className="nd-side-menu">
-    <SideMenuItem name="Dashboard" svg="dashboard" path="" />
-    <SideMenuItem name="Marketing" svg="promo" path="marketing" />
-    <SideMenuItem name="Trading Tools" svg="trading-tools" path="trading-tools" />
-    <SideMenuItem name="Education" svg="education" path="education" />
+    <SideMenuItem name="Dashboard" svg="dashboard" path="/dashboard" />
+    <SideMenuItem name="Marketing" svg="promo" path="/dashboard/marketing" />
+    <SideMenuItem name="Trading Tools" svg="trading-tools" path="/dashboard/trading-tools" />
+    <SideMenuItem name="Education" svg="education" path="/dashboard/education" />
+    <SideMenuItem name="Analytics" svg="portal" path="/dashboard/portal" />
     {/* <SideMenuItem name="Education" svg="education" path="education" />
     <SideMenuItem name="Copy Trade" svg="copy" path="copy-trade" />
     <SideMenuItem name="PAMM" svg="pamm" path="pamm" />

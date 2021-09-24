@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/mini-balance-label.scss';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
@@ -7,6 +7,12 @@ import BalanceProfile from './BalanceProfile';
 
 const MiniBalanceLabel = () => {
   const [open, setOpen] = useState(false);
+  const [balance, setBalance] = useState();
+
+  useEffect(async () => {
+    const affiliateData = await JSON.parse(localStorage.getItem('affiliateData'));
+    setBalance(affiliateData.balance);
+  }, []);
 
   return (
     <div className="nd-mini-acc-balance">
@@ -15,7 +21,8 @@ const MiniBalanceLabel = () => {
         showArrow
         triggerNode={(
           <div className="nd-value">
-            $23,230.00
+            $
+            {balance}
             <span className="nd-dropdown-icon">
               {open ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}
             </span>

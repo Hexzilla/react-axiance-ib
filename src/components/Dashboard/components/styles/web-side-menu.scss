@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  text-align: center;
+  
   .nd-side-menu-item {
     display: flex;
     flex-direction: column;
@@ -14,18 +15,18 @@
     text-decoration: none;
 
     img {
-      border: solid 2px black;
       border-radius: 50%;
-      width: 40px;
+      width: 50px;
+
       &.active {
-        -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(104%) contrast(102%);
-                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(297deg) brightness(104%) contrast(102%);
-        border: solid 2px white;
         background-color: white;
+        filter: invert(1);
+        mix-blend-mode: multiply;
       }
     }
+
     .nd-name {
-      padding-top: 2px;
+      padding-top: 5px;
       font-size: 12px;
       font-weight: bold;
     }

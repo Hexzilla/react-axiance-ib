@@ -62,7 +62,32 @@
     "fistName": "First Name",
     "lastName": "Last Name",
     "createAccount": "Create Account",
-    "country": "Country of Residence"
+    "country": "Country of Residence",
+    "questionnaire":{
+      "intro": "To proceed to the next step, we'll need you to fill in this short questionnaire.",
+      "referralsQuestion": "1. How many referrals are you initially planning to bring to Axiance?",
+      "referralsQuestionOptions": ["0 - 5", "5 - 10", "10 - 50", "50+"],
+      "perMonthQuestion": "Per month?",
+      "yesNoOptions": ["Yes", "No"],
+      "countriesToAttractQuestion": "2. What are the countries / regions are you planning to attract referrals from?",
+      "referralsFromCountriesOptions":["Asia", "Middle East", "Africa", "South America", "Europe"],
+      "modeOfCommunication": "3. What is your main mode of communication with your referrals?",
+      "modeOfCommunicationOptions": ["Email", "Phone", "Social Media", "Website"],
+      "servicesQuestion": "4. Are you offering any services to your referrals?",
+      "servicesOptions":["Customer support", "Newsletters", "Technical analysis", "Cashbacks", "Other"],
+      "servicesWebsiteQuestion": "5. Do you have a website presenting your services or that referrals visit to get familiar with the broker?",
+      "servicesWebsiteQuestionYes": "If yes, please provide the link to your website:",
+      "regulatedQuestion": "6. Are you regulated by any Financial services Authority?",
+      "financialServicesQuestion": "1. Please provide name of the Financial services Authority in your country and your registration number.",
+      "regulatorName":"2. Name of the regulator of this financial service authority",
+      "regulatorWebsite": "3. Website of the regulator of this financial service authority",
+      "financialCrimeQuestion":"4. Were you, as an introducer, subject to any legal action Anti Money Laundering Rules or any matter relating to financial crime?",
+      "provideOther": "If other, please specify",
+      "yourFinancialServices": "Your Financial Services",
+      "yourRegistrationNumber": "Your Registration Number",
+      "specifyTheCountries": "Specify the countries",
+      "submit": "Submit"
+    }
   },
   "resetPassword": {
     "forgotPassword": "Forgot your password?",
@@ -274,6 +299,14 @@
     "thankYouPageUpload": {
       "thankYouTitleUpload": "Thank you",
       "thankYouSubtitleUpload": "That’s great, you’ve submitted us all the required documents. \n Our agent will now complete your verification process and we will back to you shortly."
+    },
+    "thankYouPageQuestionnaire": {
+      "thankYouTitle": "Thank you",
+      "thankYouSubtitle": "Thank you for completing the questionnaire, that’s great! We’ll now need you to upload the required legal documents in order to proceed with your onboarding as an Axiance IB."
+    },
+    "illegal": {
+      "illegalTitle": "Policy restriction",
+      "illegalSubtitle": "You are not allowed to register. We are unable to continue your onboarding, as Axiance does not provide services to any individual or entity suspected/convicted of any illegal activity."
     }
   }
 }

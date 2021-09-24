@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { useTranslation } from 'react-i18next';
 import useWindowDimensions from '../../utils/WindowDimensions';
-import '../../styles/RiskWarning.scss';
+import '../../styles/LandingPage/RiskWarning.scss';
 import CySecDocs from '../../media/docs/cysec';
 import FSADocs from '../../media/docs/fsa';
 

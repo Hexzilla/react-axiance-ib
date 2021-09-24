@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import '../styles/UserData.scss';
+import '../styles/Onboarding/UserData.scss';
 
 const RejectedButtonWithReasonPopover = ({ reason, status }) => (
   <div className="status-container">

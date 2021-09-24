@@ -1,65 +1,38 @@
 .balance-profile {
   color: white;
-  width: 414px;
-  padding: 27px 21px;
+  width: 280px;
+  margin: 1.5rem;
 
   .switch-account-trigger {
+    font-size: 17px;
+
     img {
       width: 19px;
       padding-right: 10px;
     }
-    font-size: 17px;
-  }
-
-  .selected-account {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    .account-name {
-      font-size: 11px;
-      font-weight: bold;
-      .account-number {
-        font-weight: normal;
-      }
-    }
   }
 
   .balance-info {
-    margin-top: 40px;
-    .equation {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .equity {
-        font-weight: bold;
-        font-size: 20px;
-        :first-child {
-          font-size: 15px;
-        }
-      }
-      .equal {
-        font-size: 25px;
-      }
-      .free-margin-margin {
-        text-align: center;
-        font-weight: bold;
-        font-size: 14px;
-      }
-      .value {
-        font-size: 14px;
-      }
-    }
-
     .details {
-      margin-top: 10px;
+      .splitter {
+        height: 2px;
+        border-radius: 5px;
+        border-width: 0;
+        color: #00000033;
+        background-color: #00000033;
+      }
+
       .row {
         display: flex;
-        margin: 10px 0;
+        justify-content: space-between;
+        margin: 15px 0;
+
         .title {
-          font-weight: bold;
-          width: 120px;
+          font-weight: 600;
+        }
+
+        .value {
+          letter-spacing: 1px;
         }
       }
     }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSnackbar } from 'notistack';
 import { withRouter, useHistory } from 'react-router-dom';
-import '../../styles/Login.scss';
+import '../../styles/Onboarding/Login.scss';
 import { Input, IconButton, InputAdornment } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { VisibilityOff, Visibility } from '@material-ui/icons';

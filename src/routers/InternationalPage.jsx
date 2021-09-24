@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {
   ChangePasswordPage,
+  DocumentVerificationPage,
   DashboardPage,
   EmbedPage,
   LandingPage,
@@ -14,10 +15,9 @@ import {
   VerifyEmailPasswordPage,
   CreatePasswordPage,
   SignOutPage,
+  QuestionnairePage,
 } from '../pages';
 import { RiskWarning } from '../components/landingPage';
-
-import Dashboard2 from '../components/Dashboard/index';
 
 const entity = 'fsa';
 
@@ -26,7 +26,11 @@ const IntPage = () => (
     <RiskWarning entity={entity} />
     <Switch>
       <Route path="/" exact component={() => <LandingPage entity={entity} />} />
-      <Route path="/dashboard-2" component={() => <Dashboard2 />} />
+      <Route
+        path="/questionnaire"
+        exact
+        component={() => <QuestionnairePage entity={entity} />}
+      />
       <Route
         path="/login"
         exact
@@ -38,8 +42,12 @@ const IntPage = () => (
         component={() => <RegisterPage entity={entity} />}
       />
       <Route
-        path="/dashboard"
+        path="/documents"
         exact
+        component={() => <DocumentVerificationPage entity={entity} />}
+      />
+      <Route
+        path="/dashboard"
         component={() => <DashboardPage entity={entity} />}
       />
       <Route

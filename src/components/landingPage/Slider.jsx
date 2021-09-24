@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SliderComponent from 'rc-slider';
 import HeadShake from 'react-reveal/Shake';
 import 'rc-slider/assets/index.css';
-import '../../styles/Slider.scss';
+import '../../styles/LandingPage/Slider.scss';
 
 export default function Slider() {
   const [leftValue, setLeftValue] = useState(10);

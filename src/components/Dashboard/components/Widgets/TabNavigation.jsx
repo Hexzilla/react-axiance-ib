@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useRef, useState } from 'react';
@@ -44,7 +45,7 @@ const TabNavigation = ({ tabs }) => {
         <div className="tab-active-link-bar" style={linkBarStyle} />
       </div>
       <div className="tab-content">
-        {selected.content || <selected.Component />}
+        {selected.props ? <selected.Component {...selected.props} /> : <selected.Component />}
       </div>
     </div>
   );

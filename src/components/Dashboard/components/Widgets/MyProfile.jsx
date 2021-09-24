@@ -1,38 +1,55 @@
-import React from 'react';
-// import { FixedSizeList as List } from 'react-window';
+import React, { useState, useEffect } from 'react';
 import './styles.scss';
 
-const MyProfile = ({ style }) => (
-  <div className="my-profile widget">
-    <h1 className="name">Hello K. Papadopoulos,</h1>
+function MyProfile({ style, user }) {
+  const [affiliateData, setAffiliateData] = useState({});
+  const name = `${user.firstName.charAt(0).toUpperCase()}. ${user.lastName}`;
+  useEffect(async () => {
+    const affiliateDataFetch = await JSON.parse(localStorage.getItem('affiliateData'));
+    setAffiliateData({
+      id: affiliateDataFetch.refid,
+      acid: affiliateDataFetch.external_id,
+      registrationDate: affiliateDataFetch.regdate,
+      agent: affiliateDataFetch.agent ? affiliateDataFetch.agent : 'N/A',
+    });
+  }, []);
 
-    <div className="grid">
-
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          IB ID:
+  return (
+    <div className="my-profile widget">
+      <h1 className="name">
+        Hello
+        {' '}
+        {name}
+        ,
+      </h1>
+      <div className="grid">
+        <div style={style} className="grid-row">
+          <div className="column-1">
+            IB ID:
+          </div>
+          <div className="column-2">{affiliateData.id}</div>
         </div>
-        <div className="column-2">5321</div>
-
-      </div>
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          Registered:
+        <div style={style} className="grid-row">
+          <div className="column-1">
+            Registered:
+          </div>
+          <div className="column-2">{affiliateData.registrationDate}</div>
         </div>
-        <div className="column-2">22 August 2021, 11:54</div>
-
-      </div>
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          Axiance Client ID:
+        <div style={style} className="grid-row">
+          <div className="column-1">
+            Agent:
+          </div>
+          <div className="column-2">{affiliateData.agent}</div>
         </div>
-        <div className="column-2">16965221</div>
+        <div style={style} className="grid-row">
+          <div className="column-1">
+            Axiance Client ID:
+          </div>
+          <div className="column-2">{affiliateData.acid}</div>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 export default MyProfile;

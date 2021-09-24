@@ -5,7 +5,7 @@ import 'react-phone-number-input/style.css';
 import { withRouter, useHistory } from 'react-router-dom';
 import ReactCodeInput from 'react-code-input';
 import { userController } from '../../controllers';
-import '../../styles/VerifyEmail.scss';
+import '../../styles/Onboarding/VerifyEmail.scss';
 
 function VerifyEmailPassword(props) {
   const [pinCode, setPinCode] = useState('');

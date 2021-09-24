@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import '../../styles/Accounts.scss';
+import '../../styles/LandingPage/Accounts.scss';
 import { BsArrowRight } from 'react-icons/bs';
 import { FreedomImage } from '../../media/images/infographics';
 

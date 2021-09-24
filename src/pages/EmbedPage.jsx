@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import '../styles/Embed.scss';
@@ -7,7 +7,7 @@ import { userController } from '../controllers';
 function EmbedPage({ entity }) {
   const history = useHistory();
   const { enqueueSnackbar } = useSnackbar();
-  let url;
+  const [url, setUrl] = useState('');
 
   useEffect(async () => {
     try {
@@ -22,9 +22,8 @@ function EmbedPage({ entity }) {
     }
 
     const user = JSON.parse(localStorage.getItem('user'));
-
     try {
-      url = await userController.npGenerate(user.nullPointId, entity);
+      setUrl(await userController.npAutoLogin(user.nullPointId, entity));
     } catch (error) {
       enqueueSnackbar(error.message, {
         variant: 'error',

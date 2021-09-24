@@ -9,3 +9,4 @@ export { default as CreatePassword } from './CreatePassword';
 export { default as NewPassword } from './NewPassword';
 export { default as UserData } from './UserData';
 export { default as UploadThankYouModal } from './UploadThankYouModal';
+export { default as Questionnaire } from './Questionnaire';

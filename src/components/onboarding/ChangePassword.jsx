@@ -5,7 +5,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import { Input, InputAdornment, IconButton } from '@material-ui/core';
 import { withRouter, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import '../../styles/ChangePassword.scss';
+import '../../styles/Onboarding/ChangePassword.scss';
 import { useSnackbar } from 'notistack';
 import { userController } from '../../controllers';
 

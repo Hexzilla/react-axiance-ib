@@ -34,28 +34,30 @@ const NavigationCard = ({
   </Link>
 );
 
-const ProfilePage = () => (
-  <div className="profile-page">
-    <Route path="/" exact>
-      <div className="banner-container">
-        <img src="/assets/dashboard/marketing-banner/profile-banner.png" className="banner" alt="banner" />
-      </div>
+function ProfilePage() {
+  return (
+    <div className="profile-page">
+      <Route exact path="/dashboard/profile">
+        <div className="banner-container">
+          <img src="/assets/dashboard/marketing-banner/profile-banner.png" className="banner" alt="banner" />
+        </div>
 
-      <div className="link-container">
-        <NavigationCard title="Personal Information" description="Provide the necessary details to complete your profile." svg="personal-information-icon" path="personal-information" />
-        <NavigationCard title="My Account" description="Manage your account, edit your credentials and set your security standards." svg="my-account-icon" path="manage" />
-        <NavigationCard title="Communication Preferences" description="Set your preferences according your needs" svg="communication-icon" path="communication-preferences" />
-        <NavigationCard title="Verification Documents" description="Please add your KYC and identity documentation to verify your account" svg="verification-docs-icon" path="verify" />
-        <NavigationCard title="Legal Documents" description="Find all the necessary legal documentation" svg="legal-docs-icon" path="legal-documents" />
-      </div>
-    </Route>
+        <div className="link-container">
+          <NavigationCard title="Personal Information" description="Provide the necessary details to complete your profile." svg="personal-information-icon" path="profile/personal-information" />
+          <NavigationCard title="Change Password" description="Manage your account, edit your credentials and set your security standards." svg="my-account-icon" path="profile/manage" />
+          <NavigationCard title="Communication Preferences" description="Set your preferences according your needs" svg="communication-icon" path="profile/communication-preferences" />
+          <NavigationCard title="Verification Documents" description="Please add your KYC and identity documentation to verify your account" svg="verification-docs-icon" path="profile/verify" />
+          <NavigationCard title="Legal Documents" description="Find all the necessary legal documentation" svg="legal-docs-icon" path="profile/legal-documents" />
+        </div>
+      </Route>
 
-    <Route path="/personal-information" component={PersonalInformationForm} />
-    <Route path="/manage" component={MyAccountForm} />
-    <Route path="/communication-preferences" component={CommunicationPreferencesForm} />
-    <Route path="/verify" component={VerifyForm} />
-    <Route path="/legal-documents" component={LegalDocuments} />
-  </div>
-);
+      <Route path="/dashboard/profile/personal-information" component={PersonalInformationForm} />
+      <Route path="/dashboard/profile/manage" component={MyAccountForm} />
+      <Route path="/dashboard/profile/communication-preferences" component={CommunicationPreferencesForm} />
+      <Route path="/dashboard/profile/verify" component={VerifyForm} />
+      <Route path="/dashboard/profile/legal-documents" component={LegalDocuments} />
+    </div>
+  );
+}
 
 export default ProfilePage;

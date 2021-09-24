@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../../styles/CookiePopup.scss';
+import '../../styles/LandingPage/CookiePopup.scss';
 
 export default function CookiePopup() {
   const { t } = useTranslation();

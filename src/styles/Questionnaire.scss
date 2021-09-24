@@ -1,0 +1,107 @@
+@import "App.scss";
+
+.form {
+  .form-container {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 3pt 6pt #00000047;
+    border-radius: 5pt;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    max-width: 880px;
+
+    .title {
+      font-size: 28px;
+      margin: 0;
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-content {
+      padding: 10px 50px 50px 50px
+    }
+
+    .flex-div {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .empty-div {
+      width: 30%;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      text-align: center;
+      font-weight: 500;
+      color: #50b848;
+    }
+
+    .options-question-1 {
+      display: flex;
+      justify-content: space-between;
+      max-width: 65%;
+    }
+
+    .options-question-3 {
+      display: flex;
+      justify-content: space-between;
+      max-width: 70%;
+    }
+
+    .yes-no-container {
+      display: flex;
+      justify-content: space-between;
+      width: 25%;
+    }
+
+    .options-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .green-specify-text {
+      color: #50B848;
+      font-weight: 500
+    }
+
+    .input-fullWidth-container {
+      width: 100%;
+      min-height: 30px;
+      padding: 10px;
+      font-weight: 600;
+      opacity: 60%
+    }
+
+    .input-half-container {
+      width: 48%;
+      min-height: 30px;
+      font-weight: 600;
+      opacity: 60%;
+      padding: 5px;
+    }
+
+    .radioLabel {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 80%;
+      display: flex;
+    }
+
+    .submit-btn {
+      border: 0;
+      font-weight: 600;
+      min-width: 200px;
+      min-height: 48px;
+      background-color: #D5E05B;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 40px;
+      border-radius: 5px;
+    }
+  }
+}

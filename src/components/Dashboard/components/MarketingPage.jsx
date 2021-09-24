@@ -5,7 +5,7 @@ import BrandManualAndLogos from './Marketing/BrandManualAndLogos';
 import Banners from './Marketing/Banners';
 import MarketingVideo from './Widgets/MarketingVideo';
 
-const MarketingPage = () => (
+const MarketingPage = ({ entity }) => (
   <div className="nd-widget-container">
     <TabNavigation
       tabs={[{
@@ -16,6 +16,7 @@ const MarketingPage = () => (
         title: 'Banners',
         Component: Banners,
         key: 'b',
+        props: { entity },
       }, {
         title: 'Videos',
         Component: MarketingVideo,

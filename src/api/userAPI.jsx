@@ -162,9 +162,25 @@ async function support(supportData) {
   }
 }
 
-async function npGenerate(npData) {
+async function npAutoLogin(npData) {
+  let url;
+
   try {
-    await instance.post('/nullpoint/generate', JSON.stringify({ userData: npData }));
+    url = await instance.post('/nullpoint//auto-login', JSON.stringify({ userData: npData }));
+  } catch (error) {
+    throw new errorHelper.CodeError(error.response.data, error.response.status);
+  }
+
+  return url.data;
+}
+
+async function getAffiliateDetails(externalId, entity) {
+  try {
+    const affiliateData = await headlessInstance.get('/nullpoint/user-details', {
+      params: { externalId, entity },
+    });
+
+    return affiliateData.data;
   } catch (error) {
     throw new errorHelper.CodeError(error.response.data, error.response.status);
   }
@@ -191,6 +207,7 @@ export default {
   confirmEmailPassword,
   resendCode,
   support,
-  npGenerate,
+  npAutoLogin,
+  getAffiliateDetails,
   uploadSocials,
 };

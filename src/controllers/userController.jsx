@@ -26,11 +26,8 @@ async function login(email, password) {
     throw new errorHelper.CodeError(error.message, error.code);
   }
 
-  const expirationTime = new Date();
-  expirationTime.setDate(expirationTime.getDate() + 1);
   cookies.set('token', res.token, {
     path: '/',
-    expires: expirationTime,
   });
   localStorage.setItem('user', JSON.stringify(res.user));
   localStorage.setItem('isLoggedIn', true);
@@ -51,10 +48,7 @@ async function register(userData, language, entity) {
     throw new errorHelper.CodeError(error.message, error.code);
   }
 
-  const expirationTime = new Date();
-
-  expirationTime.setDate(expirationTime.getDate() + 1);
-  cookies.set('token', res.body.token, { path: '/', expires: expirationTime });
+  cookies.set('token', res.body.token, { path: '/' });
   localStorage.setItem('user', JSON.stringify(res.body.user));
   localStorage.setItem('isLoggedIn', true);
   localStorage.setItem('emailVerified', false);
@@ -84,6 +78,9 @@ async function checkAuth() {
       JSON.stringify(res.data.user.emailVerified),
     );
     localStorage.setItem('isLoggedIn', true);
+  } else {
+    clearStorage();
+    throw new errorHelper.CodeError('Token is invalid', 401);
   }
 }
 
@@ -152,12 +149,43 @@ async function support(supportData) {
   }
 }
 
-async function npGenerate(uuid, entity) {
+async function npAutoLogin(uuid, entity) {
   try {
-    await userAPI.npGenerate({ uuid, entity });
+    return await userAPI.npAutoLogin({ uuid, entity });
   } catch (error) {
     throw new errorHelper.CodeError(error.message, error.code);
   }
+}
+
+async function getAffiliateDetails(externalId, entity) {
+  try {
+    const affiliateData = await userAPI.getAffiliateDetails(externalId, entity);
+    await localStorage.setItem('affiliateData', JSON.stringify(affiliateData.data.aff_data[0]));
+  } catch (error) {
+    throw new errorHelper.CodeError(error.message, error.code);
+  }
+}
+
+async function generateAffiliateUrl(externalId, campaignId, page, entity) {
+  let affiliateUrl;
+
+  if (entity === 'fsa') {
+    if (page === 'registration') {
+      affiliateUrl = `https://client.axiance.com/int/sign-up/live?fxbl=axianceint&fxsrc=np&fxaffid=${externalId}&fxcid=${campaignId}&referral=${externalId}`;
+    } else if (page === 'home') {
+      affiliateUrl = `https://axiance.com/int/en-us/?fxbl=axianceint&fxsrc=np&fxaffid=${externalId}&fxcid=${campaignId}&referral=${externalId}`;
+    }
+  } else if (entity === 'cysec') {
+    if (page === 'registration') {
+      affiliateUrl = `https://client.axianceeu.com/sign-up/live?fxbl=axianceeu&fxsrc=np&fxaffid=${externalId}&fxcid=${campaignId}&referral=${externalId}`;
+    }
+  }
+
+  if (!affiliateUrl) {
+    throw new errorHelper.CodeError('Something went wrong!', 500);
+  }
+
+  return affiliateUrl;
 }
 
 async function uploadSocials(socialData) {
@@ -195,6 +223,8 @@ export default {
   confirmEmailPassword,
   resendCode,
   support,
-  npGenerate,
+  npAutoLogin,
+  getAffiliateDetails,
+  generateAffiliateUrl,
   uploadSocials,
 };

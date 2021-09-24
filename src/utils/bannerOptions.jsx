@@ -1,5 +1,3 @@
-export const ibLink = 'https://google.com';
-
 export const languageOptions = [
   { key: 'en', name: 'English' },
   { key: 'es', name: 'Spanish' },

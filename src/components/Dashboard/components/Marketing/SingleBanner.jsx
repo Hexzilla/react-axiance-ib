@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Banners.scss';
 
-const SingleBannerOptions = ({
-  theme, size, language, ibLink,
-}) => {
-  const [bannerSize, setBannerSize] = useState({
-    width: size.width,
-    height: size.height,
-  });
+const SingleBannerOptions = ({ theme, size, language }) => {
+  const [bannerSize, setBannerSize] = useState({ width: size.width, height: size.height });
   const [bannerLanguage, setBannerLanguage] = useState(language);
   const [bannerLoaded, setBannerLoaded] = useState(false);
 
@@ -18,7 +13,7 @@ const SingleBannerOptions = ({
       width: size.width,
       height: size.height,
     });
-  }, [theme, size, language, ibLink]);
+  }, [theme, size, language]);
 
   return (
     <div className="singleBanner">

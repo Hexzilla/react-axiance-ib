@@ -1,13 +1,16 @@
 .nd-profile-label {
   position: relative;
   display: flex;
+  align-items: center;
   padding: 0 23px;
+
   img {
     width: 51px;
     height: 51px;
     border-radius: 50%;
     border: 1px solid #D5E05B;
   }
+
   span.nd-badge {
     position: absolute;
     width: 24px;
@@ -17,14 +20,20 @@
     top: 0;
     left: 20px;
   }
+
   .nd-name {
     font-size: 15px;
     font-weight: 500;
+
+    .nd-name-p {
+      margin: 0;
+    }
   }
+
   .nd-name-section {
     padding-left: 12px;
-    padding-top:8px;
     font-size: medium;
+
     .nd-description {
       font-size: 12px;
     }

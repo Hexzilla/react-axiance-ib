@@ -4,23 +4,16 @@ import { Menu, Header, Footer } from '../components';
 import {
   Partner, Slider, Partnership, Accounts, LogoBar,
 } from '../components/landingPage';
+import { routerHelper } from '../helpers';
 
 function LandingPage({ entity }) {
   const history = useHistory();
 
-  useEffect(() => {
-    if (
-      JSON.parse(localStorage.getItem('isLoggedIn')) === true
-      && JSON.parse(localStorage.getItem('emailVerified')) === false
-    ) {
-      history.push('/verify-email');
-    } else if (
-      JSON.parse(localStorage.getItem('isLoggedIn')) === true
-      && JSON.parse(localStorage.getItem('nullPointId')) !== null
-    ) {
-      history.push('/portal');
-    } else if (JSON.parse(localStorage.getItem('isLoggedIn')) === true) {
-      history.push('/dashboard');
+  useEffect(async () => {
+    window.scrollTo(0, 0);
+    const reroute = await routerHelper.reroute();
+    if (reroute !== null) {
+      history.push(reroute);
     }
   }, []);
 

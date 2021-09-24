@@ -5,7 +5,8 @@ import { withRouter, useHistory } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import ReactCodeInput from 'react-code-input';
 import { userController } from '../../controllers';
-import '../../styles/VerifyEmail.scss';
+import { routerHelper } from '../../helpers';
+import '../../styles/Onboarding/VerifyEmail.scss';
 
 function VerifyEmail() {
   const [pinCode, setPinCode] = useState('');
@@ -14,9 +15,11 @@ function VerifyEmail() {
   const { t } = useTranslation();
   let user;
 
-  useEffect(() => {
-    if (JSON.parse(localStorage.getItem('emailVerified')) === true) {
-      history.push('/dashboard');
+  useEffect(async () => {
+    window.scrollTo(0, 0);
+    const reroute = await routerHelper.reroute();
+    if (reroute !== null) {
+      history.push(reroute);
     }
   }, []);
 
@@ -32,7 +35,9 @@ function VerifyEmail() {
       });
     }
 
-    history.push('/dashboard');
+    history.push(
+      JSON.parse(localStorage.getItem('questionnaireCompleted')) ? '/dashboard' : '/questionnaire',
+    );
   };
 
   const resendCode = async () => {

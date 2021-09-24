@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {
   ChangePasswordPage,
-  DashboardPage,
+  DocumentVerificationPage,
   EmbedPage,
   LandingPage,
   LoginPage,
@@ -14,6 +14,7 @@ import {
   VerifyEmailPasswordPage,
   CreatePasswordPage,
   SignOutPage,
+  QuestionnairePage,
 } from '../pages';
 
 const ENTITY = 'fsc';
@@ -32,9 +33,14 @@ const GlobalPage = () => (
       component={() => <RegisterPage entity={ENTITY} />}
     />
     <Route
-      path="/dashboard"
+      path="/questionnaire"
       exact
-      component={() => <DashboardPage entity={ENTITY} />}
+      component={() => <QuestionnairePage entity={ENTITY} />}
+    />
+    <Route
+      path="/documents"
+      exact
+      component={() => <DocumentVerificationPage entity={ENTITY} />}
     />
     <Route
       path="/portal"

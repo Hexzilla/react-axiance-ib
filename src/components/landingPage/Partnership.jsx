@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import '../../styles/Partnership.scss';
+import '../../styles/LandingPage/Partnership.scss';
 import Pulse from 'react-reveal/Pulse';
 import {
   EarnIcon, IntroduceIcon, MoreIcon, PromoteIcon,

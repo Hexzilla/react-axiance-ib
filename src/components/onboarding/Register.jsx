@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { Input, IconButton, InputAdornment } from '@material-ui/core';
 import { VisibilityOff, Visibility } from '@material-ui/icons';
-import '../../styles/Register.scss';
+import '../../styles/Onboarding/Register.scss';
 import WHITE_LISTED_COUNTRY_LIST from '../../utils/WhiteListedCountries';
 import { userController } from '../../controllers';
 import { routerHelper } from '../../helpers';

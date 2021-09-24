@@ -274,6 +274,10 @@
     "thankYouPageUpload": {
       "thankYouTitleUpload": "Gracias",
       "thankYouSubtitleUpload": "Estupendo, nos ha enviado todos los documentos requeridos. \n Ahora nuestro agente completará su proceso de verificación y se pondrá en contacto con usted a la mayor brevedad."
+    },
+    "illegal": {
+      "illegalTitle": "Restricción de la Política",
+      "illegalSubtitle": "No tiene permiso para registrarse. No podemos continuar con su incorporación, ya que Axiance no proporciona servicios a ninguna persona o entidad sospechosa/condenada por cualquier actividad ilegal."
     }
   }
 }

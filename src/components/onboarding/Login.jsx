@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter, Link, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSnackbar } from 'notistack';
-import '../../styles/Login.scss';
+import '../../styles/Onboarding/Login.scss';
 import { Input, IconButton, InputAdornment } from '@material-ui/core';
 import { VisibilityOff, Visibility } from '@material-ui/icons';
 import { userController } from '../../controllers';

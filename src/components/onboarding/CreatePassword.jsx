@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSnackbar } from 'notistack';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-import '../../styles/Login.scss';
+import '../../styles/Onboarding/Login.scss';
 import { userController } from '../../controllers';
 
 export default function CreatePassword() {
