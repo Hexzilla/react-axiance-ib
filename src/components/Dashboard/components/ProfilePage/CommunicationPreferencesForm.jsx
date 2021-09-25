@@ -8,6 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Slider from '@material-ui/core/Slider';
 import Tooltip from '@material-ui/core/Tooltip';
 import Switch from '@material-ui/core/Switch';
+import ComPreferences from './preferences.json';
 
 const valueFormatFn = (v) => {
   if (v === 0) {
@@ -59,7 +60,7 @@ const YellowSlider = withStyles({
   thumb: {
     border: '1px solid currentColor',
     boxShadow: '#ebebeb 0 2px 2px',
-    '&:focus, &:hover, &$active': {
+    '&:focus, &:hover': {
       boxShadow: '#ccc 0 2px 3px 1px',
     },
   },
@@ -87,7 +88,37 @@ function ValueLabelComponent(props) {
 
 const CommunicationPreferencesForm = () => {
   const history = useHistory();
-  const [value, setValue] = useState([3, 7]);
+  const [availableDays, setAvailableDays] = useState({});
+  const [availableHours, setAvailableHours] = useState([7, 20]);
+  const [preferences, setPreferences] = useState({
+    general: {},
+    email: {},
+  });
+
+  const handleAvailableDays = (e) => {
+    const { name, checked } = e.target;
+    setAvailableDays((prevState) => ({
+      ...prevState,
+      [name]: checked,
+    }));
+  };
+
+  const handlePreference = (e, category) => {
+    const { name, checked } = e.target;
+    setPreferences((prevState) => ({
+      ...prevState,
+      [category]: {
+        ...prevState[category],
+        [name]: checked,
+      },
+    }));
+  };
+
+  const submit = async (e) => {
+    e.preventDefault();
+    console.log('availabeDays', availableDays);
+    console.log('preferences', preferences);
+  };
 
   return (
     <div className="com-preferences">
@@ -99,53 +130,79 @@ const CommunicationPreferencesForm = () => {
         Tell us when, how and why you wish to be contacted by our team.
       </div>
 
-      <form className="com-form">
+      <form className="com-form" onSubmit={(e) => submit(e)}>
         <div className="availability section">
           <div className="days">
             <h4>Available Days</h4>
-            <FormControlLabel control={<YellowCheckbox name="checkedG" />} label="Monday" />
-            <FormControlLabel control={<YellowCheckbox name="checkedG" />} label="Tuesday" />
-            <FormControlLabel control={<YellowCheckbox name="checkedG" />} label="Wednesday" />
-            <FormControlLabel control={<YellowCheckbox name="checkedG" />} label="Thursday" />
-            <FormControlLabel control={<YellowCheckbox name="checkedG" />} label="Friday" />
+            { ComPreferences.days.map((item) => (
+              <FormControlLabel
+                key={item}
+                label={item}
+                control={(
+                  <YellowCheckbox
+                    name={item.toLowerCase()}
+                    checked={availableDays[item]}
+                    onChange={handleAvailableDays}
+                  />
+                )}
+              />
+            ))}
           </div>
           <div className="hours">
             <h4>Available Hours</h4>
-            <YellowSlider
-              value={value}
-              min={0}
-              max={24}
-              valueLabelDisplay="on"
-              aria-labelledby="range-slider"
-              onChange={(e, u) => setValue(u)}
-              getAriaValueText={(e) => `${e} sdf`}
-              valueLabelFormat={valueFormatFn}
-              ValueLabelComponent={ValueLabelComponent}
-            />
+            <div className="range-slider">
+              <YellowSlider
+                value={availableHours}
+                min={0}
+                max={24}
+                valueLabelDisplay="on"
+                aria-labelledby="range-slider"
+                onChange={(e, u) => setAvailableHours(u)}
+                getAriaValueText={(e) => `${e} sdf`}
+                valueLabelFormat={valueFormatFn}
+                ValueLabelComponent={ValueLabelComponent}
+              />
+            </div>
           </div>
         </div>
 
         <div className="section switch-list">
           <h4>General Preference</h4>
-
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="E-Mail" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Phone" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Telegram" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="WhatsApp" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Facebook" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Instagram" />
-
+          { ComPreferences.general.map((item) => (
+            <FormControlLabel
+              key={item.name}
+              label={item.label}
+              control={(
+                <YellowSwitch
+                  name={item.name}
+                  checked={preferences.general[item.name] || false}
+                  onChange={(e) => handlePreference(e, 'general')}
+                />
+              )}
+            />
+          ))}
         </div>
 
         <div className="section switch-list">
           <h4>Email Preferences</h4>
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Market News" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Information" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Education" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Promos & Offers" />
-          <FormControlLabel control={<YellowSwitch name="checkedA" />} label="Statistics & Summary" />
+          { ComPreferences.email.map((item) => (
+            <FormControlLabel
+              key={item.name}
+              label={item.label}
+              control={(
+                <YellowSwitch
+                  name={item.name}
+                  checked={preferences.email[item.name] || false}
+                  onChange={(e) => handlePreference(e, 'email')}
+                />
+              )}
+            />
+          ))}
         </div>
 
+        <div className="section-button switch-list">
+          <button type="submit" className="nd-btn">Save</button>
+        </div>
       </form>
     </div>
   );

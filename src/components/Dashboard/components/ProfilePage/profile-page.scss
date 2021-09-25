@@ -1,3 +1,5 @@
+@import '../../../../styles/App.scss';
+
 .profile-page {
   padding: 20px;
 
@@ -80,6 +82,10 @@
       padding-top: 20px;
       padding-left: 70px;
       font-size: 15px;
+
+      @media (max-width: $breakpoint-mobile) {
+        padding-left: 0px;
+      }
     }
 
     .content {
@@ -145,6 +151,10 @@
     padding-top: 20px;
     padding-left: 70px;
 
+    @media (max-width: $breakpoint-mobile) {
+      padding-left: 0px;
+    }
+
     .section {
       padding-top: 20px;
       padding-bottom: 20px;
@@ -155,6 +165,12 @@
     .switch-list {
       display: flex;
       flex-direction: column;
+    }
+
+    .section-button {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: 200px;
     }
 
     .availability {
@@ -175,7 +191,7 @@
         }
 
         .range-slider {
-          color: #ffee58;
+          margin-top: 70px;
         }
       }
     }
