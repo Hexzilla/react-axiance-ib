@@ -46,13 +46,42 @@ const YellowSwitch = withStyles({
   },
 })(Switch);
 
+const YellowSlider = withStyles({
+  root: {
+    color: yellow[600],
+    height: 3,
+    padding: '13px 0',
+  },
+  track: {
+    height: 3,
+    borderRadius: 2,
+  },
+  thumb: {
+    border: '1px solid currentColor',
+    boxShadow: '#ebebeb 0 2px 2px',
+    '&:focus, &:hover, &$active': {
+      boxShadow: '#ccc 0 2px 3px 1px',
+    },
+  },
+})(Slider);
+
+const YellowTooltip = withStyles({
+  tooltip: {
+    color: 'black',
+    backgroundColor: yellow[600],
+  },
+  arrow: {
+    color: yellow[600],
+  },
+})(Tooltip);
+
 function ValueLabelComponent(props) {
   const { children, open, value } = props;
 
   return (
-    <Tooltip open={open} enterTouchDelay={0} placement="top" title={value}>
+    <YellowTooltip open={open} arrow enterTouchDelay={0} placement="top" title={value}>
       {children}
-    </Tooltip>
+    </YellowTooltip>
   );
 }
 
@@ -82,7 +111,7 @@ const CommunicationPreferencesForm = () => {
           </div>
           <div className="hours">
             <h4>Available Hours</h4>
-            <Slider
+            <YellowSlider
               value={value}
               min={0}
               max={24}

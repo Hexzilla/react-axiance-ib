@@ -168,9 +168,14 @@
       .hours {
         display: flex;
         flex-direction: column;
+        margin-left: 50px;
 
         h4 {
           padding-bottom: 20px;
+        }
+
+        .range-slider {
+          color: #ffee58;
         }
       }
     }
