@@ -2,11 +2,12 @@ import React from 'react';
 import './profile-page.scss';
 import { Link, Route } from 'react-router-dom';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import PersonalInformationForm from './PersonalInformationForm';
-import MyAccountForm from './MyAccountForm';
-import CommunicationPreferencesForm from './CommunicationPreferencesForm';
 import VerifyForm from './VerifyForm';
-import LegalDocuments from './LegalDocuments';
+
+const PersonalInformationForm = React.lazy(() => import('./PersonalInformationForm'));
+const MyAccountForm = React.lazy(() => import('./MyAccountForm'));
+const CommunicationPreferencesForm = React.lazy(() => import('./CommunicationPreferencesForm'));
+const LegalDocuments = React.lazy(() => import('./LegalDocuments'));
 
 const NavigationCard = ({
   svg, title, description, uncompleted, path,

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { useHistory } from 'react-router-dom';
@@ -116,7 +117,7 @@ const CommunicationPreferencesForm = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    console.log('availabeDays', availableDays);
+    console.log('availabeDays', availableDays, availableHours);
     console.log('preferences', preferences);
   };
 
@@ -156,9 +157,7 @@ const CommunicationPreferencesForm = () => {
                 min={0}
                 max={24}
                 valueLabelDisplay="on"
-                aria-labelledby="range-slider"
                 onChange={(e, u) => setAvailableHours(u)}
-                getAriaValueText={(e) => `${e} sdf`}
                 valueLabelFormat={valueFormatFn}
                 ValueLabelComponent={ValueLabelComponent}
               />
