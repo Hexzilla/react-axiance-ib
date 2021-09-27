@@ -205,7 +205,7 @@ async function uploadSocials(socialData) {
     const token = cookies.get('token');
 
     const payload = {
-      ...socialData,
+      socialData,
       uuid,
       token,
     };
