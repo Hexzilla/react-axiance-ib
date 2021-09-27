@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { useSnackbar } from 'notistack';
 import { useHistory } from 'react-router-dom';
-import AvailabilityComponent from './CommuncationPreferences/AvailabilityComponent';
-import SocialMediaComponent from './CommuncationPreferences/SocialMediaComponent';
+import { userController } from '../../../../controllers';
+
+const AvailabilityComponent = React.lazy(() => import('./CommuncationPreferences/AvailabilityComponent'));
+const SocialMediaComponent = React.lazy(() => import('./CommuncationPreferences/SocialMediaComponent'));
 
 const CommunicationPreferencesForm = () => {
   const history = useHistory();
+  const { enqueueSnackbar } = useSnackbar();
+
+  const [availableDays, setAvailableDays] = useState({});
+  const [availableHours, setAvailableHours] = useState([7, 20]);
+  const [communicationPref, setCommunicationPref] = useState({
+    facebook: '',
+    linkedin: '',
+    instagram: '',
+    skype: '',
+    phoneNumber: '',
+    email: '',
+  });
+
+  const uploadSocials = async (e) => {
+    e.preventDefault();
+    const payload = {
+      ...communicationPref,
+      availableDays,
+      availableHours: {
+        from: availableHours[0],
+        to: availableHours[1],
+      },
+    };
+    try {
+      await userController.uploadSocials(payload);
+    } catch (error) {
+      enqueueSnackbar(error.message, {
+        variant: 'error',
+      });
+    }
+  };
 
   return (
     <div className="com-preferences">
@@ -18,13 +52,20 @@ const CommunicationPreferencesForm = () => {
       </div>
 
       <form className="com-form">
-        <AvailabilityComponent />
+        <AvailabilityComponent
+          availableDays={availableDays}
+          setAvailableDays={setAvailableDays}
+          availableHours={availableHours}
+          setAvailableHours={setAvailableHours}
+        />
         <div className="section switch-list">
           <h4>Preferred Communication Channel</h4>
-
-          <SocialMediaComponent />
+          <SocialMediaComponent
+            communicationPref={communicationPref}
+            setCommunicationPref={setCommunicationPref}
+            uploadSocials={uploadSocials}
+          />
         </div>
-
       </form>
     </div>
   );

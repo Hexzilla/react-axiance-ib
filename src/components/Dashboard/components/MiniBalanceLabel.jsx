@@ -11,7 +11,7 @@ const MiniBalanceLabel = () => {
 
   useEffect(async () => {
     const affiliateData = await JSON.parse(localStorage.getItem('affiliateData'));
-    setBalance(affiliateData.balance);
+    setBalance(affiliateData?.balance);
   }, []);
 
   return (

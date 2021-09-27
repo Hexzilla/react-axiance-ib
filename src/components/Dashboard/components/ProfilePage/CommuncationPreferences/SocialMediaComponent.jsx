@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useSnackbar } from 'notistack';
 import '../../styles/SocialMedia.scss';
 import { useTranslation } from 'react-i18next';
 import {
@@ -8,20 +7,14 @@ import {
   FaLinkedinIn,
   FaFacebookF,
 } from 'react-icons/fa';
-import { userController } from '../../../../../controllers';
 
-export default function SocialMediaComponent() {
+export default function SocialMediaComponent({
+  communicationPref,
+  setCommunicationPref,
+  uploadSocials,
+}) {
   const { t } = useTranslation();
-  const { enqueueSnackbar } = useSnackbar();
   const [selectedCommunication, setSelectedCommunication] = useState('');
-  const [communicationPref, setCommunicationPref] = useState({
-    facebook: '',
-    linkedin: '',
-    instagram: '',
-    skype: '',
-    phoneNumber: '',
-    email: '',
-  });
 
   const handleSocialChange = (e) => {
     const { name, value } = e.target;
@@ -29,18 +22,6 @@ export default function SocialMediaComponent() {
       ...prevState,
       [name]: value,
     }));
-  };
-
-  const uploadSocials = async (e) => {
-    e.preventDefault();
-
-    try {
-      await userController.uploadSocials(communicationPref);
-    } catch (error) {
-      enqueueSnackbar(error.message, {
-        variant: 'error',
-      });
-    }
   };
 
   useEffect(() => {
@@ -59,12 +40,7 @@ export default function SocialMediaComponent() {
 
   return (
     <div className="socials-container-component">
-      <form
-        className="comm-options-form"
-        onSubmit={(e) => {
-          uploadSocials(e);
-        }}
-      >
+      <div className="comm-options-form">
         <div className="half-width-div">
           <div className="social-input-box">
             <input
@@ -230,8 +206,9 @@ export default function SocialMediaComponent() {
           type="submit"
           className="submit green-cta"
           value={t('save')}
+          onClick={uploadSocials}
         />
-      </form>
+      </div>
     </div>
   );
 }
