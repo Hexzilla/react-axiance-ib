@@ -214,7 +214,6 @@ async function uploadSocials(socialData) {
     const updatedUser = { ...localUser, socialData };
     localStorage.setItem('user', JSON.stringify(updatedUser));
   } catch (error) {
-    console.log('error', error);
     throw new errorHelper.CodeError(error.response.data, error.response.status);
   }
 }
