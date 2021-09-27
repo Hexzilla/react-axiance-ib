@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../styles/SocialMedia.scss';
 import { useTranslation } from 'react-i18next';
 import {
@@ -9,34 +9,26 @@ import {
 } from 'react-icons/fa';
 
 export default function SocialMediaComponent({
-  communicationPref,
-  setCommunicationPref,
+  preferences,
+  setPreferences,
   uploadSocials,
 }) {
   const { t } = useTranslation();
-  const [selectedCommunication, setSelectedCommunication] = useState('');
-
   const handleSocialChange = (e) => {
     const { name, value } = e.target;
-    setCommunicationPref((prevState) => ({
+    setPreferences((prevState) => ({
       ...prevState,
+      contactMethod: name,
       [name]: value,
     }));
   };
 
-  useEffect(() => {
-    (async () => {
-      const localUser = await JSON.parse(localStorage.getItem('user'));
-      setCommunicationPref({
-        facebook: localUser.socialData.facebook,
-        linkedin: localUser.socialData.linkedin,
-        instagram: localUser.socialData.instagram,
-        skype: localUser.socialData.skype,
-        phoneNumber: localUser.phoneNum,
-        email: localUser.email,
-      });
-    })();
-  }, []);
+  const setSelectedCommunication = (value) => {
+    setPreferences((prevState) => ({
+      ...prevState,
+      contactMethod: value,
+    }));
+  };
 
   return (
     <div className="socials-container-component">
@@ -47,8 +39,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="facebook"
               name="facebook"
-              value="Facebook"
-              checked={selectedCommunication === 'Facebook'}
+              value="facebook"
+              checked={preferences.contactMethod === 'facebook'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -59,7 +51,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 id="facebook"
                 name="facebook"
-                value={communicationPref.facebook}
+                value={preferences.facebook}
                 onChange={handleSocialChange}
                 className="field"
               />
@@ -74,8 +66,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="linkedIn"
               name="linkedIn"
-              value="Linkedin"
-              checked={selectedCommunication === 'Linkedin'}
+              value="linkedin"
+              checked={preferences.contactMethod === 'linkedin'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -85,7 +77,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 name="linkedin"
                 id="linkedin"
-                value={communicationPref.linkedin}
+                value={preferences.linkedin}
                 onChange={handleSocialChange}
                 className="field"
               />
@@ -100,8 +92,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="instagram"
               name="instagram"
-              value="Instagram"
-              checked={selectedCommunication === 'Instagram'}
+              value="instagram"
+              checked={preferences.contactMethod === 'instagram'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -111,7 +103,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 name="instagram"
                 id="instagram"
-                value={communicationPref.instagram}
+                value={preferences.instagram}
                 onChange={handleSocialChange}
                 className="field"
               />
@@ -128,8 +120,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="skype"
               name="skype"
-              value="Skype"
-              checked={selectedCommunication === 'Skype'}
+              value="skype"
+              checked={preferences.contactMethod === 'skype'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -139,7 +131,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 name="skype"
                 id="skype"
-                value={communicationPref.skype}
+                value={preferences.skype}
                 onChange={handleSocialChange}
                 className="field"
               />
@@ -154,8 +146,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="email"
               name="email"
-              value="Email"
-              checked={selectedCommunication === 'Email'}
+              value="email"
+              checked={preferences.contactMethod === 'email'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -165,7 +157,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 name="email"
                 id="email"
-                value={communicationPref.email}
+                value={preferences.email}
                 onChange={handleSocialChange}
                 className="field"
               />
@@ -180,8 +172,8 @@ export default function SocialMediaComponent({
               type="radio"
               id="phone"
               name="phone"
-              value="Phone"
-              checked={selectedCommunication === 'Phone'}
+              value="phone"
+              checked={preferences.contactMethod === 'phone'}
               onChange={(e) => setSelectedCommunication(e.target.value)}
               className="radio-button"
             />
@@ -191,7 +183,7 @@ export default function SocialMediaComponent({
                 placeholder=" "
                 name="phone"
                 id="phone"
-                value={communicationPref.phoneNumber}
+                value={preferences.phoneNumber}
                 onChange={handleSocialChange}
                 className="field"
               />

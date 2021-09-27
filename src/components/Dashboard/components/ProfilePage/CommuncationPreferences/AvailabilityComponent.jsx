@@ -93,7 +93,7 @@ const AvailabilityComponent = ({
             control={(
               <YellowCheckbox
                 name={item.toLowerCase()}
-                checked={availableDays[item]}
+                checked={availableDays[item.toLowerCase()] || false}
                 onChange={handleAvailableDays}
               />
             )}

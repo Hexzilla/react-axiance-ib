@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { useSnackbar } from 'notistack';
 import { useHistory } from 'react-router-dom';
@@ -13,7 +13,8 @@ const CommunicationPreferencesForm = () => {
 
   const [availableDays, setAvailableDays] = useState({});
   const [availableHours, setAvailableHours] = useState([7, 20]);
-  const [communicationPref, setCommunicationPref] = useState({
+  const [preferences, setPreferences] = useState({
+    contactMethod: '',
     facebook: '',
     linkedin: '',
     instagram: '',
@@ -25,7 +26,7 @@ const CommunicationPreferencesForm = () => {
   const uploadSocials = async (e) => {
     e.preventDefault();
     const payload = {
-      ...communicationPref,
+      ...preferences,
       availableDays,
       availableHours: {
         from: availableHours[0],
@@ -34,12 +35,31 @@ const CommunicationPreferencesForm = () => {
     };
     try {
       await userController.uploadSocials(payload);
+
+      enqueueSnackbar('Communication preferences has been updated', {
+        variant: 'success',
+      });
     } catch (error) {
       enqueueSnackbar(error.message, {
         variant: 'error',
       });
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      const { socialData } = await JSON.parse(localStorage.getItem('user'));
+      if (socialData) {
+        setPreferences(socialData);
+      }
+      if (socialData?.availableDays) {
+        setAvailableDays(socialData.availableDays);
+      }
+      if (socialData?.availableHours) {
+        setAvailableHours([socialData.availableHours.from, socialData.availableHours.to]);
+      }
+    })();
+  }, []);
 
   return (
     <div className="com-preferences">
@@ -61,8 +81,8 @@ const CommunicationPreferencesForm = () => {
         <div className="section switch-list">
           <h4>Preferred Communication Channel</h4>
           <SocialMediaComponent
-            communicationPref={communicationPref}
-            setCommunicationPref={setCommunicationPref}
+            preferences={preferences}
+            setPreferences={setPreferences}
             uploadSocials={uploadSocials}
           />
         </div>

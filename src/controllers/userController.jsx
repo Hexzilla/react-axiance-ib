@@ -189,24 +189,32 @@ async function generateAffiliateUrl(externalId, campaignId, page, entity) {
 }
 
 async function uploadSocials(socialData) {
+  if (socialData.contactMethod === 'none') {
+    throw new errorHelper.CodeError('You have to select a contact method', 400);
+  } else if (
+    socialData.contactMethod !== 'email'
+    && socialData.contactMethod !== 'phone' && socialData.contactMethod !== 'telegram' && socialData.contactMethod !== 'whatsapp'
+      && isEmpty(socialData[socialData.contactMethod])
+  ) {
+    throw new errorHelper.CodeError('Selected contact method is empty', 400);
+  }
+
   try {
-    if (socialData.contactMethod === 'none') {
-      throw new errorHelper.CodeError('You have to select a contact method', 400);
-    } else if (
-      socialData.contactMethod !== 'email'
-      && socialData.contactMethod !== 'phone' && socialData.contactMethod !== 'telegram' && socialData.contactMethod !== 'whatsapp'
-       && isEmpty(socialData[socialData.contactMethod])
-    ) {
-      throw new errorHelper.CodeError('Selected contact method is empty', 400);
-    }
     const localUser = await JSON.parse(localStorage.getItem('user'));
     const { uuid } = localUser;
     const token = cookies.get('token');
 
-    await userAPI.uploadSocials(uuid, token, socialData);
+    const payload = {
+      ...socialData,
+      uuid,
+      token,
+    };
+    await userAPI.uploadSocials(payload);
+
     const updatedUser = { ...localUser, socialData };
     localStorage.setItem('user', JSON.stringify(updatedUser));
   } catch (error) {
+    console.log('error', error);
     throw new errorHelper.CodeError(error.response.data, error.response.status);
   }
 }
