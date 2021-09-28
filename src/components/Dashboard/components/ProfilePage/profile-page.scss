@@ -58,6 +58,7 @@
 
   .personal-info-form,
   .my-account-form,
+  .verify-identity-form,
   .com-preferences,
   .legal-docs {
     display: flex;
@@ -196,6 +197,68 @@
           margin-top: 70px;
         }
       }
+    }
+  }
+
+  .identity-form {
+    padding-top: 20px;
+    padding-left: 70px;
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .approved {
+        padding: 10px;
+        border: 3px solid #50B848;
+        border-radius: 8px;
+        width: 140px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #50B848;
+        font-weight: 600;
+      }
+    }
+
+    .check-list {
+      display: flex;
+      flex-direction: row;
+
+      .column {
+        margin-right: 40px;
+      
+        .option {
+          font-size: 14px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .passport-options {
+      .MuiFormGroup-root {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 40px 0;
+        padding: 5px;
+      }
+
+      input {
+        margin-right: 10px;
+      }
+    }
+
+    .passport-images {
+      margin: 40px;
     }
   }
 }

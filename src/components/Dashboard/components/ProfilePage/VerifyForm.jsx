@@ -1,59 +1,96 @@
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { withStyles, styled } from '@material-ui/core/styles';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import CheckIcon from '@material-ui/icons/Check';
+import { Radio, RadioGroup, FormControlLabel } from '@material-ui/core';
+import { useSnackbar } from 'notistack';
+import { userController } from '../../../../controllers';
+
+const GreenCheckIcon = styled(CheckIcon)({
+  color: '#50B848',
+  fontSize: '16px',
+  marginRight: '6px',
+});
+
+const GreenRadio = styled(Radio)({
+  color: 'grey',
+  '&.Mui-checked': {
+    color: '#50B848',
+  },
+});
 
 const VerifyForm = () => {
   const history = useHistory();
+  const { enqueueSnackbar } = useSnackbar();
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    enqueueSnackbar('Your password has been changed', {
+      variant: 'success',
+    });
+  };
+
   return (
-    <div className="w-full max-w-xs place-content-center">
+    <div className="verify-identity-form">
       <div className="head-line">
         <ArrowBackIcon onClick={() => history.goBack()} />
-        <h2 className="text-2xl font-bold text-center">
-          Personal Information
-        </h2>
+        <div className="title">Upload your documents</div>
       </div>
-      {/* <form className="rounded px-8 pt-6 pb-8 mb-4">
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-          Username
-        </label>
-        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+      <div className="sub-title">
+        Please provide your Personal ID and Proof of Residence documents
       </div>
-      <div className="mb-6">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-          Password
-        </label>
-        <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-        <p className="text-red-500 text-xs italic">Please choose a password.</p>
-      </div>
-      <div className="flex items-center justify-between">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-          Sign In
-        </button>
-        <button type="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Button
-        </button>
-      </div>
-    </form> */}
-
-      <form className="max-w-sm mx-auto rounded-lg shadow-m overflow-hidden p-6 space-y-5">
-
-        <div className="outline relative border-2 focus-within:border-blue-500">
-          <input type="text" name="firstName" placeholder=" " className="block p-4 w-full text-lg appearance-none focus:outline-none bg-transparent" />
-          <label htmlFor="firstName" className="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0">First Name</label>
+      <form noValidate autoComplete="off" className="identity-form" onSubmit={onSubmit}>
+        <div className="section">
+          <img src="/assets/dashboard/verify-identity.svg" alt="exclamation" />
+          <div className="title">
+            Verify Identity
+          </div>
+          <div className="approved">
+            Approved
+          </div>
         </div>
-        <div className="outline relative border-2 focus-within:border-blue-500">
-          <input type="email" name="email" placeholder=" " className="block p-4 w-full text-lg appearance-none focus:outline-none bg-transparent" />
-          <label htmlFor="email" className="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0">Email</label>
+        <div className="make-sure">
+          Make sure the following are included:
         </div>
-        <div className="outline relative border-2 focus-within:border-blue-500">
-          <input type="password" name="password" placeholder=" " className="block p-4 w-full text-lg appearance-none focus:outline-none bg-transparent" />
-          <label htmlFor="password" className="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0">Password</label>
+        <div className="check-list">
+          <div className="column">
+            <div className="option">
+              <GreenCheckIcon />
+              Photo
+            </div>
+            <div className="option">
+              <GreenCheckIcon />
+              Full name
+            </div>
+          </div>
+          <div className="column">
+            <div className="option">
+              <GreenCheckIcon />
+              Valid expiration date
+            </div>
+            <div className="option">
+              <GreenCheckIcon />
+              Official ID – document number
+            </div>
+          </div>
         </div>
+        <div className="passport-options">
+          <RadioGroup
+            aria-label="gender"
+            name="controlled-radio-buttons-group"
+          >
+            <FormControlLabel value="id" control={<GreenRadio />} label="ID" />
+            <FormControlLabel value="passport" control={<GreenRadio />} label="Passport" />
+            <FormControlLabel value="license" control={<GreenRadio />} label="Driving License" />
+          </RadioGroup>
+        </div>
+        <div className="passport-images">
+          Images
+        </div>
+        <button type="submit" className="nd-btn">Submit</button>
       </form>
-
     </div>
   );
 };
