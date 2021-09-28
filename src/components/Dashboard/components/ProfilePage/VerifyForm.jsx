@@ -86,10 +86,7 @@ const VerifyForm = () => {
             <FormControlLabel value="license" control={<GreenRadio />} label="Driving License" />
           </RadioGroup>
         </div>
-        <div className="passport-images">
-          Images
-        </div>
-        <button type="submit" className="nd-btn">Submit</button>
+        <button type="submit" className="nd-btn" disabled>Submit</button>
       </form>
     </div>
   );
