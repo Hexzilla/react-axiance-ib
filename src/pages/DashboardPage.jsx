@@ -14,7 +14,7 @@ import EmbedPage from './EmbedPage';
 import { userController } from '../controllers';
 
 export default function DashboardPage({ entity }) {
-  const [dataLoading, setDataLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(false);
   const [userData, setUserData] = useState({});
   const history = useHistory();
 
