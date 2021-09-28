@@ -1,12 +1,10 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { withStyles, styled } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CheckIcon from '@material-ui/icons/Check';
 import { Radio, RadioGroup, FormControlLabel } from '@material-ui/core';
 import { useSnackbar } from 'notistack';
-import { userController } from '../../../../controllers';
 
 const GreenCheckIcon = styled(CheckIcon)({
   color: '#50B848',
@@ -23,13 +21,9 @@ const GreenRadio = styled(Radio)({
 
 const VerifyForm = () => {
   const history = useHistory();
-  const { enqueueSnackbar } = useSnackbar();
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    enqueueSnackbar('Your password has been changed', {
-      variant: 'success',
-    });
   };
 
   return (
