@@ -4,7 +4,6 @@ import { styled } from '@material-ui/core/styles';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import CheckIcon from '@material-ui/icons/Check';
 import { Radio, RadioGroup, FormControlLabel } from '@material-ui/core';
-import { useSnackbar } from 'notistack';
 
 const GreenCheckIcon = styled(CheckIcon)({
   color: '#50B848',
