@@ -9,8 +9,10 @@ const SingleBannerOptions = ({
     height: size.height,
   });
   const [bannerLanguage, setBannerLanguage] = useState(language);
+  const [bannerLoaded, setBannerLoaded] = useState(false);
 
   useEffect(() => {
+    setBannerLoaded(false);
     setBannerLanguage(language);
     setBannerSize({
       width: size.width,
@@ -22,12 +24,12 @@ const SingleBannerOptions = ({
     <div className="singleBanner">
       <div className="imageBox">
         <img
-          key={bannerLanguage}
+          alt={`Banner-${theme}`}
           src={`https://axiance-assets.netlify.app/portal/banners/${theme}/${bannerLanguage}/${bannerSize.width}x${bannerSize.height}.png`}
           width={bannerSize.width}
           height={bannerSize.height}
-          alt="banner"
-          className="bannerImage"
+          className={bannerLoaded ? 'bannerImage' : 'bannerImage bannerLoading'}
+          onLoad={() => setTimeout(() => setBannerLoaded(true), 250)}
         />
       </div>
     </div>

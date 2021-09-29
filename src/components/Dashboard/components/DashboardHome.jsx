@@ -7,8 +7,10 @@ import PartnernLink from './Widgets/YourPartnerLink';
 
 const DashboardHome = () => (
   <div className="nd-widget-container">
-    <div className="col col-2 col-sm-4">
+    <div className="col col-1 col-sm-4">
       <MyProfile />
+    </div>
+    <div className="col col-1 col-sm-4">
       <MarketAnalysis />
     </div>
     <div className="col col-1 col-sm-4">

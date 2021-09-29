@@ -1,0 +1,51 @@
+const videos = [
+  {
+    id: '1',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video1.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video1.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+  {
+    id: '2',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video2.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video2.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+  {
+    id: '3',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video3.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video3.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+  {
+    id: '4',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video4.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video4.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+  {
+    id: '5',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video5.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video5.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+  {
+    id: '6',
+    thumbnail: 'https://axiance-assets.netlify.app/portal/videos/thumbnails/video6.png',
+    url: 'https://axiance-assets.netlify.app/portal/videos/videos/video6.mp4',
+    language: 'English',
+    size: '1920x1080',
+    theme: 'Promotional',
+  },
+];
+export default videos;

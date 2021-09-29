@@ -1,0 +1,51 @@
+{
+  "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  "general": [
+    {
+      "name": "email",
+      "label": "E-Mail"
+    },
+    {
+      "name": "phone",
+      "label": "Phone"
+    },
+    {
+      "name": "telegram",
+      "label": "Telegram"
+    },
+    {
+      "name": "whatsapp",
+      "label": "WhatsApp"
+    },
+    {
+      "name": "facebook",
+      "label": "Facebook"
+    },
+    {
+      "name": "instagram",
+      "label": "Instagram"
+    }
+  ],
+  "email": [
+    {
+      "name": "market_news",
+      "label": "Market News"
+    },
+    {
+      "name": "information",
+      "label": "Information"
+    },
+    {
+      "name": "education",
+      "label": "Education"
+    },
+    {
+      "name": "promos_offers",
+      "label": "Promos & Offers"
+    },
+    {
+      "name": "statistics_summary",
+      "label": "Statistics & Summary"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ const MarketingCarousel = () => (
   <div className="marketing-carousel">
     <div className="carousel">
       <ul className="slides">
-        <input type="radio" name="radio-buttons" id="img-1" checked />
+        <input type="radio" name="radio-buttons" id="img-1" checked onChange={() => {}} />
         <li className="slide-container">
           <div className="slide-image">
             <div className="img" style={{ backgroundImage: 'url("/assets/dashboard/marketing-banner/commosities@2x.png")' }} />

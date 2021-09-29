@@ -4,7 +4,7 @@ import './styles.scss';
 
 const MyProfile = ({ style }) => (
   <div className="my-profile widget">
-    <h1 className="name">Hello K. Papadopoulos</h1>
+    <h1 className="name">Hello K. Papadopoulos,</h1>
 
     <div className="grid">
 
@@ -19,7 +19,7 @@ const MyProfile = ({ style }) => (
       <div style={style} className="grid-row">
 
         <div className="column-1">
-          Registered
+          Registered:
         </div>
         <div className="column-2">22 August 2021, 11:54</div>
 
@@ -27,32 +27,9 @@ const MyProfile = ({ style }) => (
       <div style={style} className="grid-row">
 
         <div className="column-1">
-          Agent:
-        </div>
-        <div className="column-2">N/A</div>
-
-      </div>
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          Agent Email:
-        </div>
-        <div className="column-2">N/A</div>
-
-      </div>
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          Client ID:
+          Axiance Client ID:
         </div>
         <div className="column-2">16965221</div>
-      </div>
-      <div style={style} className="grid-row">
-
-        <div className="column-1">
-          Wallet Balance:
-        </div>
-        <div className="column-2">N/A</div>
       </div>
     </div>
   </div>
